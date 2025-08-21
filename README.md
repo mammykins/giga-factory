@@ -59,7 +59,7 @@ The core functionalities of this project are:
 1.  **Ensure all dependencies are installed** (see Setup and Installation).
 2.  **Run the main Python script:**
     ```bash
-    python batter_production_miner.py
+    python battery_production_miner.py
     python process_mining_analysis.py
     ```
     These scripts will:

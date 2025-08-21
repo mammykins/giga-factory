@@ -1,0 +1,108 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+# Usually it creates a build folder, and dist folder
+# The dist folder is where the compiled app lives, so maybe you want to commit that.
+# If you want to ignore dist folder:
+# dist/
+
+# Installer logs
+pip-install.log
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# PyInstaller
+# *.spec
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDEs and editors
+# Visual Studio Code
+.vscode/
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Atom
+.atom/
+
+# PyCharm / IntelliJ IDEA
+# IntelliJ / PyCharm specific files
+.idea/
+*.iml
+
+# macOS Specific
+# Ignore the `.DS_Store` file created by macOS Finder
+.DS_Store
+# Ignore the `.AppleDouble` folder
+.AppleDouble
+# Ignore the resource fork metadata folder
+.resource-fork/
+# Ignore the `.Spotlight-V100` folder
+.Spotlight-V100
+# Ignore the `._*` files created by macOS
+._*
+
+# Secrets / Sensitive Data (NEVER COMMIT THESE!)
+# .env
+# secrets.yml
+# config.ini
+# ... add any other files containing sensitive information
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Virtual environment (if you are not committing your `venv` folder itself)
+# If you are using a venv named 'venv' in the root of your project
+venv/
+.venv/
+env/
+.env/
+venv_api/
+
+# pm4py specific files (if they get generated and you don't want them)
+# For instance, if pm4py creates temporary model files
+# *.bpmn
+# *.pnml
