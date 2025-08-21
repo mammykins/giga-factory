@@ -1,184 +1,187 @@
 # process_mining_analysis.py
+# ----------------------------------------------------------
+# Battery manufacturing process mining analysis
+#
+# This script does three things:
+# 1) Converts a tabular event log (CSV) into a PM4Py EventLog
+# 2) Discovers and visualizes the process model (Inductive Miner -> Petri Net)
+# 3) Runs diagnostics (frequent activities, start/end acts, durations, rework)
+# 4) Analyzes how batch size correlates with performance (stakeholder value!)
+#
+# Comments are written with the "why" in mind, not just the "what".
+# ----------------------------------------------------------
 
 import pandas as pd
 import pm4py
+
+# Process discovery
 from pm4py.algo.discovery.inductive import algorithm as inductive_miner
-from pm4py.algo.conformance.alignments.petri_net import algorithm as alignments_module
+from pm4py.objects.conversion.process_tree import converter as pt_converter
+
+# Log conversion (DataFrame -> EventLog)
 from pm4py.objects.conversion.log import converter as log_converter
+
+# Conformance checking
+from pm4py.algo.conformance.alignments.petri_net import algorithm as alignments_module
+from pm4py.algo.evaluation import algorithm as eval_algorithm
+
+# Visualization
 from pm4py.visualization.petri_net import visualizer as pn_viz
-from pm4py.statistics import start_activities
-from pm4py.statistics import end_activities
+
+# Start / End activities
+from pm4py.statistics.start_activities.log import get as start_acts_get
+from pm4py.statistics.end_activities.log import get as end_acts_get
 
 
-# --- Load Event Log Data ---
+# ---------------------------
+# 1) Load the event log
+# ---------------------------
 try:
     event_log_df = pd.read_csv("battery_production_event_log.csv")
     print("\nLoaded event log from CSV.")
 except FileNotFoundError:
-    print("CSV not found, generating synthetic data again.")
-    event_log_df = generate_battery_production_log(num_cases=1000)
-    event_log_df.to_csv("battery_production_event_log.csv", index=False)
+    raise FileNotFoundError(
+        "CSV not found. Please provide 'battery_production_event_log.csv' "
+        "before running this script."
+    )
 
-# Ensure timestamp column is datetime
+# Ensure timestamps are proper datetime
 event_log_df["timestamp"] = pd.to_datetime(event_log_df["timestamp"])
 
+# ----------------------------------------------------------
+# 2) Convert DataFrame -> EventLog using canonical XES names
+# WHY: PM4Py works best when columns match XES semantics.
+# - case_id -> case:concept:name
+# - activity -> concept:name
+# - timestamp -> time:timestamp
+# ----------------------------------------------------------
+df = event_log_df.rename(
+    columns={
+        "case_id": "case:concept:name",
+        "activity": "concept:name",
+        "timestamp": "time:timestamp",
+    }
+)
 
-# --- Convert DataFrame → EventLog ---
-# IMPORTANT: PM4Py expects *canonical column names*:
-#   - case:concept:name  -> case identifier
-#   - concept:name       -> activity name
-#   - time:timestamp     -> timestamp
-# If you rename your DataFrame this way, you don't need to pass any mapping constants.
-event_log_df = event_log_df.rename(columns={
-    "case_id": "case:concept:name",
-    "activity": "concept:name",
-    "timestamp": "time:timestamp"
-})
+# Convert into PM4Py EventLog (object-based, not just tabular)
+event_log = log_converter.apply(df, variant=log_converter.Variants.TO_EVENT_LOG)
+print("Converted DataFrame into PM4Py EventLog.")
 
-# Convert to EventLog object
-event_log = log_converter.apply(event_log_df, variant=log_converter.Variants.TO_EVENT_LOG)
-
-print("\nPM4Py EventLog Created:")
-print(event_log)
-
-# --- Process Discovery ---
+# ------------------------------------------------------------
+# 3) Process discovery (Inductive Miner -> Process Tree -> Petri Net)
+# WHY: The Petri net is a formal model we can check for conformance.
+# ------------------------------------------------------------
 print("\nDiscovering Process Model (Inductive Miner)...")
-
-# Step 1: discover process tree
 process_tree = inductive_miner.apply(event_log, variant=inductive_miner.Variants.IMf)
-
-# Step 2: convert process tree into Petri net + initial/final marking
-from pm4py.objects.conversion.process_tree import converter as pt_converter
 petri_net, initial_marking, final_marking = pt_converter.apply(process_tree)
-
 print("Process model discovered and converted to Petri Net.")
 
-# --- Process Insights ---
+# ---------------------------------------------
+# 4) Visualize Petri Net
+# WHY: Stakeholders like pictures. This shows the "happy path".
+# ---------------------------------------------
+try:
+    gviz = pn_viz.apply(petri_net, initial_marking, final_marking)
+    pn_viz.save(gviz, "discovered_process_model.png")
+    print("Petri net visualization saved to 'discovered_process_model.png'.")
+except Exception as e:
+    print(f"Petri net visualization skipped: {e}")
+
+# --------------------------------
+# 5) Exploratory diagnostics
+# --------------------------------
 print("\n--- Key Process Insights ---")
 
-# 1. Most Frequent Activities
+# 5.1 Most frequent activities
 print("\n1. Most Frequent Activities:")
-print(event_log_df["concept:name"].value_counts().head(10))
+print(df["concept:name"].value_counts().head(10))
 
-# 2. Start and End Activities
+# 5.2 Start/End activities
 print("\n2. Start and End Activities:")
-start_activities = start_activities.get_start_activities(event_log)
-end_activities = end_activities.get_end_activities(event_log)
-print(f"  Start Activities: {start_activities}")
-print(f"  End Activities: {end_activities}")
+print("  Start Activities:", start_acts_get.get_start_activities(event_log))
+print("  End Activities:  ", end_acts_get.get_end_activities(event_log))
 
-# 3. Average Duration per Activity
-print("\n3. Average Duration per Activity:")
-event_log_df["duration_seconds"] = (
-    event_log_df.groupby("case:concept:name")["time:timestamp"]
-    .diff()
-    .dt.total_seconds()
-    .fillna(0)
+# 5.3 Average duration per activity
+# WHY: Duration tells us which steps are bottlenecks.
+df = df.sort_values(["case:concept:name", "time:timestamp"])
+df["duration_seconds"] = (
+    df.groupby("case:concept:name")["time:timestamp"].diff().dt.total_seconds().fillna(0)
 ).abs()
 
 activity_durations = (
-    event_log_df[event_log_df["concept:name"].str.startswith("REWORK_") == False]
+    df[~df["concept:name"].str.startswith("REWORK_", na=False)]
     .groupby("concept:name")["duration_seconds"]
     .agg(["mean", "median", "std", "count"])
 )
-activity_durations["mean_minutes"] = activity_durations["mean"] / 60
-activity_durations["median_minutes"] = activity_durations["median"] / 60
-print(activity_durations.sort_values(by="mean_minutes", ascending=False).head(10))
+activity_durations["mean_minutes"] = activity_durations["mean"] / 60.0
+print("\n3. Average Duration per Activity (excluding rework):")
+print(activity_durations.sort_values("mean_minutes", ascending=False).head(10))
 
-# 4. Rework Analysis
+# 5.4 Rework analysis
 print("\n4. Rework Analysis:")
-rework_events = event_log_df[event_log_df["concept:name"].str.startswith("REWORK_")]
+rework_events = df[df["concept:name"].str.startswith("REWORK_", na=False)]
 if not rework_events.empty:
     print(rework_events["concept:name"].value_counts())
 else:
-    print("No rework events found in the synthetic data.")
+    print("No rework events found.")
 
-
-# --- Conformance Checking ---
+# -----------------------------------------
+# 6) Conformance checking
+# WHY: Validates if the real logs fit the discovered model.
+# -----------------------------------------
 print("\n5. Conformance Checking:")
 
-alignments = alignments_module.apply(event_log, petri_net, initial_marking, final_marking)
+try:
+    _alignments = alignments_module.apply(event_log, petri_net, initial_marking, final_marking)
+    print("  Alignments computed.")
+except Exception as e:
+    print(f"  Alignments skipped: {e}")
 
-print("  Calculating Replay Fitness...")
-fitness_results = pm4py.algo.evaluation.replay_fitness.algorithm.apply(
-    event_log, petri_net, initial_marking, final_marking
-)
-print(f"    Log Fitness: {fitness_results['averageFitness']:.4f}")
+try:
+    eval_results = eval_algorithm.apply(event_log, petri_net, initial_marking, final_marking)
+    print("  Model Evaluation:")
+    for metric in ["fitness", "precision", "generalization", "simplicity", "average"]:
+        if metric in eval_results:
+            print(f"    {metric.title()}: {eval_results[metric]:.4f}")
+except Exception as e:
+    print(f"  Unified evaluation skipped: {e}")
 
-print("  Calculating Precision...")
-precision_results = pm4py.algo.evaluation.precision.algorithm.apply(
-    event_log, petri_net, initial_marking, final_marking
-)
-print(f"    Precision: {precision_results:.4f}")
-
-print("  Calculating Generalization...")
-generalization_results = pm4py.algo.evaluation.generalization.algorithm.apply(
-    event_log, petri_net, initial_marking, final_marking
-)
-print(f"    Generalization: {generalization_results:.4f}")
-
-print("  Calculating Robustness...")
-robustness_results = pm4py.algo.evaluation.robustness.algorithm.apply(
-    event_log, petri_net, initial_marking, final_marking
-)
-print(f"    Robustness: {robustness_results:.4f}")
-
-
-# --- Batch Size Analysis ---
+# ----------------------------------------------------
+# 7) Batch size vs performance analysis
+# WHY: This connects process mining to manufacturing KPIs.
+# - Batch size is the number of units produced together.
+# - We want to know if bigger batches are faster/slower,
+#   and whether they are more/less prone to rework.
+# ----------------------------------------------------
 print("\n6. Analysis of Batch Size and Process Duration:")
 
-trace_durations_df = event_log_df.groupby("case:concept:name").agg(
-    first_timestamp=("time:timestamp", "min"),
-    last_timestamp=("time:timestamp", "max"),
-    batch_size=("batch_size", lambda x: x.iloc[0]),
-)
-trace_durations_df["total_duration_seconds"] = (
-    trace_durations_df["last_timestamp"] - trace_durations_df["first_timestamp"]
-).dt.total_seconds()
-trace_durations_df["total_duration_minutes"] = (
-    trace_durations_df["total_duration_seconds"] / 60
-)
+if "batch_size" in df.columns:
+    # Case-level stats
+    trace_durations_df = df.groupby("case:concept:name").agg(
+        first_timestamp=("time:timestamp", "min"),
+        last_timestamp=("time:timestamp", "max"),
+        batch_size=("batch_size", lambda x: x.iloc[0]),
+    )
+    trace_durations_df["total_duration_minutes"] = (
+        (trace_durations_df["last_timestamp"] - trace_durations_df["first_timestamp"]).dt.total_seconds() / 60.0
+    )
 
-print("  Overall batch processing time vs. batch size:")
-print(trace_durations_df[["batch_size", "total_duration_minutes"]].corr())
+    # Correlation: batch size vs total duration
+    print("  Correlation between batch size and processing time:")
+    print(trace_durations_df[["batch_size", "total_duration_minutes"]].corr())
 
-event_log_df_with_batch = event_log_df.merge(
-    trace_durations_df[["batch_size"]],
-    left_on="case:concept:name",
-    right_index=True,
-    how="left",
-)
+    # Rework occurrence rate by batch size group
+    df_with_batch = df.merge(trace_durations_df[["batch_size"]], left_on="case:concept:name", right_index=True)
+    rework_df = df_with_batch[df_with_batch["concept:name"].str.startswith("REWORK_", na=False)]
+    if not rework_df.empty:
+        rework_df["batch_size_group"] = pd.cut(rework_df["batch_size_y"], bins=5, labels=False, include_lowest=True)
+        rework_rate = (
+            rework_df.groupby("batch_size_group")["case:concept:name"].nunique()
+            / df_with_batch.groupby(pd.cut(df_with_batch["batch_size_y"], bins=5))["case:concept:name"].nunique()
+        ) * 100
+        print("\n  Rework occurrence rate (%) by batch size group:")
+        print(rework_rate)
+else:
+    print("  'batch_size' column not found in the event log. Skipping batch size analysis.")
 
-# Assembly/Packaging duration vs batch size
-assembly_df = event_log_df_with_batch[
-    event_log_df_with_batch["concept:name"] == "Assembly/Packaging"
-]
-if not assembly_df.empty:
-    assembly_df["batch_size_group"] = pd.cut(
-        assembly_df["batch_size"], bins=5, labels=False, include_lowest=True
-    )
-    avg_assembly_duration_by_group = (
-        assembly_df.groupby("batch_size_group")["duration_seconds"].mean() / 60
-    )
-    print("\n  Average Assembly/Packaging duration (minutes) by batch size group:")
-    print(avg_assembly_duration_by_group)
-
-# Rework rate vs batch size
-rework_events_with_batch = event_log_df_with_batch[
-    event_log_df_with_batch["concept:name"].str.startswith("REWORK_")
-]
-if not rework_events_with_batch.empty:
-    rework_events_with_batch["batch_size_group"] = pd.cut(
-        rework_events_with_batch["batch_size"], bins=5, labels=False, include_lowest=True
-    )
-    rework_rate_by_batch_group = (
-        rework_events_with_batch.groupby("batch_size_group")["case:concept:name"].count()
-    )
-    total_batches_in_group = (
-        event_log_df_with_batch.groupby("batch_size_group")["case:concept:name"].nunique()
-    )
-    rework_occurrence_rate = (
-        (rework_rate_by_batch_group / total_batches_in_group).fillna(0) * 100
-    )
-    print("\n  Rework occurrence rate (%) by batch size group:")
-    print(rework_occurrence_rate)
+print("\nDone.")
