@@ -176,16 +176,58 @@ if "batch_size" in df.columns:
 
     # Rework occurrence rate by batch size group
     df_with_batch = df.merge(trace_durations_df[["batch_size"]], left_on="case:concept:name", right_index=True)
+    df_with_batch["batch_size_group"] = pd.cut(df_with_batch["batch_size_y"], bins=5, labels=False, include_lowest=True)
     rework_df = df_with_batch[df_with_batch["concept:name"].str.startswith("REWORK_", na=False)]
     if not rework_df.empty:
-        rework_df["batch_size_group"] = pd.cut(rework_df["batch_size_y"], bins=5, labels=False, include_lowest=True)
-        rework_rate = (
-            rework_df.groupby("batch_size_group")["case:concept:name"].nunique()
-            / df_with_batch.groupby(pd.cut(df_with_batch["batch_size_y"], bins=5))["case:concept:name"].nunique()
-        ) * 100
+        # Define bins ONCE to ensure consistent categories
+        bins = pd.interval_range(
+            start=df_with_batch["batch_size_y"].min(),
+            end=df_with_batch["batch_size_y"].max(),
+            periods=5
+        )
+        df_with_batch["batch_size_group"] = pd.cut(df_with_batch["batch_size_y"], bins=bins, include_lowest=True)
+        rework_df["batch_size_group"] = pd.cut(rework_df["batch_size_y"], bins=bins, include_lowest=True)
+
+        # Count unique cases in each bin
+        total_counts = df_with_batch.groupby("batch_size_group")["case:concept:name"].nunique()
+        rework_counts = rework_df.groupby("batch_size_group")["case:concept:name"].nunique()
+
+        # Compute % safely (fill missing bins with 0)
+        rework_rate = (rework_counts / total_counts) * 100
+        rework_rate = rework_rate.fillna(0).round(1)
+
         print("\n  Rework occurrence rate (%) by batch size group:")
         print(rework_rate)
 else:
     print("  'batch_size' column not found in the event log. Skipping batch size analysis.")
 
+# ----------------------------------------------------
+# Optional: Quick visualization of rework vs batch size
+# ----------------------------------------------------
+try:
+    import plotext as plt
+except ImportError:
+    plt = None
+    print("Install 'plotext' if you want terminal-based ASCII charts (pip install plotext).")
+
+# Only plot if rework_rate exists and is not empty
+if 'rework_rate' in locals() and not rework_rate.empty:
+    # Convert interval index into neat labels like "500–1400"
+    clean_labels = [
+        f"{int(interval.left)}–{int(interval.right)}"
+        for interval in rework_rate.index
+    ]
+
+    y_values = rework_rate.values
+
+    if plt is not None:
+        print("\nRework Rate by Batch Size Group (ASCII chart):")
+        plt.clear_figure()
+        plt.plotsize(60, 15)  # width=60 chars, height=15 rows
+        plt.bar(clean_labels, y_values)
+        plt.title("Rework Rate by Batch Size Group")
+        plt.ylabel("% Rework")
+        plt.show()
+
 print("\nDone.")
+
