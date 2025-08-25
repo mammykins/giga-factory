@@ -140,9 +140,13 @@ except Exception as e:
 try:
     eval_results = eval_algorithm.apply(event_log, petri_net, initial_marking, final_marking)
     print("  Model Evaluation:")
-    for metric in ["fitness", "precision", "generalization", "simplicity", "average"]:
-        if metric in eval_results:
-            print(f"    {metric.title()}: {eval_results[metric]:.4f}")
+    for metric, result in eval_results.items():
+        if isinstance(result, dict) and "value" in result:
+            print(f"    {metric.title()}: {result['value']:.4f}")
+        elif isinstance(result, (int, float)):
+            print(f"    {metric.title()}: {result:.4f}")
+        else:
+            print(f"    {metric.title()}: {result}")
 except Exception as e:
     print(f"  Unified evaluation skipped: {e}")
 
