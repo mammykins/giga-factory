@@ -1,6 +1,10 @@
-
-
 # Gigafactory Battery Production Process Mining
+
+[![Python](https://img.shields.io/badge/python-3.13.5-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Repo Stars](https://img.shields.io/github/stars/mammykins/giga-factory?style=social)](https://github.com/mammykins/giga-factory/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/mammykins/giga-factory)](https://github.com/mammykins/giga-factory/commits/main)
+[![Repo Size](https://img.shields.io/github/repo-size/mammykins/giga-factory)](https://github.com/mammykins/giga-factory)
 
 This project provides a framework for analyzing and understanding the production process of a gigafactory that manufactures a product at scale (e.g. batteries). It combines **synthetic data generation** with **process mining techniques** to identify bottlenecks, rework loops, and potential areas for optimization.  
 
