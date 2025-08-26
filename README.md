@@ -5,13 +5,16 @@
 [![Repo Stars](https://img.shields.io/github/stars/mammykins/giga-factory?style=social)](https://github.com/mammykins/giga-factory/stargazers)
 [![Last Commit](https://img.shields.io/github/last-commit/mammykins/giga-factory)](https://github.com/mammykins/giga-factory/commits/main)
 [![Repo Size](https://img.shields.io/github/repo-size/mammykins/giga-factory)](https://github.com/mammykins/giga-factory)
+[![DeepWiki](https://img.shields.io/badge/Deep--Wiki-Enabled-brightgreen)](https://deepwiki.com/badge-maker?url=https%3A%2F%2Fdeepwiki.com%2Fmammykins%2Fgiga-factory)
 
 This project provides a framework for analyzing and understanding the production process of a gigafactory that manufactures a product at scale (e.g. batteries). It combines **synthetic data generation** with **process mining techniques** to identify bottlenecks, rework loops, and potential areas for optimization.  
 
 ---
 
 ## Who Is This For?
+
 This project is intended for:
+
 - **Data scientists** exploring process mining methods with synthetic data.
 - **Manufacturing engineers** who want to experiment with analysis techniques before applying them to real gigafactory data.
 - **Students and researchers** learning about process discovery and event log analysis.
@@ -19,6 +22,7 @@ This project is intended for:
 ---
 
 ## Usage Scenarios
+
 - **Demo Mode (Synthetic Data):**
   Run the included scripts to generate a synthetic event log and perform process mining analysis. This is useful for learning and experimentation.
 - **Real Data Mode:**
@@ -27,6 +31,7 @@ This project is intended for:
 ---
 
 ## Core Features
+
 1. **Synthetic Data Generation:** Creates a sorta-realistic event log simulating a battery production process, including various stages, durations, potential rework loops, and batch-specific attributes.
 2. **Process Discovery:** Uses the `pm4py` library to discover a process model (Petri Net) from the event log, representing the actual flow of activities.
 3. **Process Analysis & Insights:** Provides metrics such as:
@@ -40,6 +45,7 @@ This project is intended for:
 ---
 
 ## Technologies Used
+
 - **Python** – core programming language
 - **Pandas / NumPy** – data handling and synthetic generation
 - **PM4Py** – process mining algorithms and visualization
@@ -48,7 +54,9 @@ This project is intended for:
 ---
 
 ## Setup and Installation
+
 1. **Clone the repository** (or download the files):
+
    ```bash
    git clone https://github.com/your-username/gigafactory-process-mining.git
    cd gigafactory-process-mining
@@ -72,9 +80,9 @@ This project is intended for:
 
 4. **Install Graphviz (for visualizations):**
 
-   * macOS: `brew install graphviz`
-   * Ubuntu/Debian: `sudo apt-get install graphviz`
-   * Windows: Download from [graphviz.org](https://graphviz.org/download/) and add to PATH.
+   - macOS: `brew install graphviz`
+   - Ubuntu/Debian: `sudo apt-get install graphviz`
+   - Windows: Download from [graphviz.org](https://graphviz.org/download/) and add to PATH.
 
 ---
 
@@ -104,11 +112,11 @@ This project is intended for:
 
    These will:
 
-   * Generate synthetic battery production event log data
-   * Save it to `battery_production_event_log.csv`
-   * Discover a process model using the Inductive Miner
-   * Save the process model visualization to `discovered_process_model.png`
-   * Print insights to the console
+   - Generate synthetic battery production event log data
+   - Save it to `battery_production_event_log.csv`
+   - Discover a process model using the Inductive Miner
+   - Save the process model visualization to `discovered_process_model.png`
+   - Print insights to the console
 
 ---
 
@@ -136,10 +144,10 @@ Average activity durations (minutes):
 
 ## Example Insights
 
-* **Bottlenecks:** Longest average activity durations highlight efficiency constraints.
-* **Rework Loops:** High rework rates suggest quality or process control issues.
-* **Batch Size Impact:** Larger batches may correlate with increased rework or delays.
-* **Conformance:** Metrics show how closely execution matches the expected process.
+- **Bottlenecks:** Longest average activity durations highlight efficiency constraints.
+- **Rework Loops:** High rework rates suggest quality or process control issues.
+- **Batch Size Impact:** Larger batches may correlate with increased rework or delays.
+- **Conformance:** Metrics show how closely execution matches the expected process.
 
 ---
 
@@ -147,10 +155,10 @@ Average activity durations (minutes):
 
 1. **Data Collection:** Extract real event data from MES/SCADA/ERP systems. Required fields:
 
-   * Case ID (Batch ID / Lot Number)
-   * Activity Name (e.g., "Assembly," "QC")
-   * Timestamp
-   * Optional: Resource, Batch Size, Quality Results
+   - Case ID (Batch ID / Lot Number)
+   - Activity Name (e.g., "Assembly," "QC")
+   - Timestamp
+   - Optional: Resource, Batch Size, Quality Results
 
 2. **Data Preprocessing:** Clean and format data into the `pm4py` event log structure.
 
@@ -164,10 +172,10 @@ Average activity durations (minutes):
 
 You can extend this project by:
 
-* Trying alternative process mining algorithms from `pm4py`
-* Modifying the synthetic data generator (e.g., simulate breakdowns or quality drift)
-* Adding visualizations (e.g., rework heatmaps, lead-time distributions)
-* Extending the analysis
+- Trying alternative process mining algorithms from `pm4py`
+- Modifying the synthetic data generator (e.g., simulate breakdowns or quality drift)
+- Adding visualizations (e.g., rework heatmaps, lead-time distributions)
+- Extending the analysis
 
 Contributions and pull requests are welcome!
 
