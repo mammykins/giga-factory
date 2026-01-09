@@ -5,9 +5,11 @@ description = "Process mining analysis framework for gigafactory battery product
 readme = "README.md"
 requires-python = ">=3.13.5"
 dependencies = [
+    "data-designer>=0.3.1",
     "matplotlib>=3.10.8",
     "numpy>=2.4.0",
     "pandas>=2.3.3",
     "plotext>=5.3.2",
     "pm4py>=2.7.19.5",
+    "python-dotenv>=1.2.1",
 ]

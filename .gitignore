@@ -82,7 +82,7 @@ coverage.xml
 ._*
 
 # Secrets / Sensitive Data (NEVER COMMIT THESE!)
-# .env
+.env
 # secrets.yml
 # config.ini
 # ... add any other files containing sensitive information
