@@ -60,22 +60,23 @@ This project is intended for:
    ```bash
    git clone https://github.com/your-username/gigafactory-process-mining.git
    cd gigafactory-process-mining
+   ```
 
-
-2. **Create a virtual environment** (recommended):
+2. **Install uv** (if not already installed):
 
    ```bash
-   python -m venv venv
-   # On Windows:
-   .\venv\Scripts\activate
-   # On macOS/Linux:
-   source venv/bin/activate
+   # macOS/Linux
+   brew install uv
+   
+   # Or using pip
+   pip install uv
    ```
 
 3. **Install dependencies:**
 
    ```bash
-   pip install -r requirements.txt
+   # uv automatically creates and manages the virtual environment
+   uv sync
    ```
 
 4. **Install Graphviz (for visualizations):**
@@ -106,8 +107,8 @@ This project is intended for:
 2. Run the scripts:
 
    ```bash
-   python battery_production_miner.py
-   python process_mining_analysis.py
+   uv run python battery_production_miner.py
+   uv run python process_mining_analysis.py
    ```
 
    These will:

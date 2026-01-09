@@ -1,0 +1,13 @@
+[project]
+name = "giga-battery"
+version = "0.1.0"
+description = "Process mining analysis framework for gigafactory battery production"
+readme = "README.md"
+requires-python = ">=3.13.5"
+dependencies = [
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.0",
+    "pandas>=2.3.3",
+    "plotext>=5.3.2",
+    "pm4py>=2.7.19.5",
+]

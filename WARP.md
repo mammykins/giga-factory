@@ -17,12 +17,11 @@ This is a **process mining analysis framework** for gigafactory battery producti
 
 ### Environment Setup
 ```bash
-# Create and activate virtual environment
-python -m venv .venv
-source .venv/bin/activate  # macOS/Linux
+# Install uv (if not already installed)
+brew install uv  # macOS
 
-# Install dependencies
-pip install -r requirements.txt
+# Install dependencies (uv automatically manages virtual environment)
+uv sync
 
 # Install Graphviz (required for visualizations)
 brew install graphviz  # macOS
@@ -31,10 +30,10 @@ brew install graphviz  # macOS
 ### Running the Analysis
 ```bash
 # Step 1: Generate synthetic event log data
-python battery_production_miner.py
+uv run python battery_production_miner.py
 
 # Step 2: Run process mining analysis
-python process_mining_analysis.py
+uv run python process_mining_analysis.py
 ```
 
 The workflow is **sequential**: `battery_production_miner.py` must run first to generate `battery_production_event_log.csv`, which is then consumed by `process_mining_analysis.py`.
