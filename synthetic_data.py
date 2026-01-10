@@ -173,6 +173,12 @@ def main():
     # preview data until satisfied
     #
     preview = data_designer.preview(config_builder, num_records=2)
+    print("*" * 70)
+    preview.display_sample_record()
+    print("*" * 70)
+    preview.dataset
+    print("*" * 70)
+    preview.analysis.to_report()
 
 
 if __name__ == "__main__":
