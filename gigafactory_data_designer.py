@@ -17,21 +17,24 @@ from data_designer.essentials import (
     SamplerColumnConfig,
     SamplerType,
     SubcategorySamplerParams,
-    UniformSamplerParams,
     GaussianSamplerParams,
     UUIDSamplerParams,
     ExpressionColumnConfig,
 )
 
 
-# 1. Define Structured Output Schemas
-class QualityMetric(BaseModel):
-    internal_resistance_mohm: Decimal = Field(
-        description="Measured internal resistance in milliohms", ge=1.0, le=5.0
+# 1. Define Polymorphic Schema
+# Instead of hardcoding "Voltage", we define a generic measurement structure.
+# This allows the LLM to dynamically decide that "Mixing" needs "Viscosity"
+# and "Formation" needs "Voltage".
+class ProcessMeasurement(BaseModel):
+    metric_name: str = Field(
+        description="The technical name of the measurement (e.g., 'Slurry Viscosity', 'Electrode Thickness', 'OCV Voltage')"
     )
-    voltage_v: Decimal = Field(description="Open circuit voltage", ge=3.2, le=4.2)
-    pass_fail_status: Literal["Pass", "Marginal", "Fail"] = Field(
-        description="Quality assessment result"
+    value: float = Field(description="The numeric value of the measurement")
+    unit: str = Field(description="The unit of measure (e.g., 'Pa.s', 'microns', 'V', 'mOhm')")
+    status: Literal["In Spec", "Tolerance Warning", "Critical Fail"] = Field(
+        description="The quality assessment based on the value"
     )
 
 
@@ -65,7 +68,7 @@ def main():
             model=MODEL_ID,
             provider="nvidia",
             inference_parameters=ChatCompletionInferenceParams(
-                temperature=0.7,
+                temperature=0.4,  # Lower temperature for more consistent technical metrics
                 max_tokens=1024,
                 extra_body={"chat_template_kwargs": {"enable_thinking": False}},
             ),
@@ -153,26 +156,45 @@ def main():
         )
     )
 
-    # 6. Generate "Interesting" Narrative Insights
+    # 6. Generate Narrative Logs (Connecting the Data)
+    # The prompt references the structured data we generate (qc_data),
+    # ensuring the text matches the numbers.
     config_builder.add_column(
         LLMTextColumnConfig(
-            name="maintenance_log",
+            name="operator_log",
             model_alias=MODEL_ALIAS,
-            prompt="""You are a factory floor supervisor at a UK battery giga-factory. 
-            Describe a brief observation for the {{ subcategory }} step in batch {{ case_id }}. 
-            Mention the ambient temperature of {{ ambient_temp_c }}°C. 
-            If the temp is over 22°C, mention a slight cooling adjustment. 
-            Keep it professional and technical.""",
+            prompt="""Write a short, telegraphic operator log for batch {{ case_id }} at step {{ subcategory }}.
+            
+            The system recorded a value of {{ qc_data.value }} {{ qc_data.unit }} for {{ qc_data.metric_name }}.
+            The status was flagged as: {{ qc_data.status }}.
+            
+            If the status is 'In Spec', simply note 'Process nominal'.
+            If 'Tolerance Warning' or 'Critical Fail', describe a potential root cause (e.g., 'pump pressure fluctuation', 'oven temp drift', 'debris on sensor').""",
         )
     )
 
-    # 7. Structured Technical Data
+    # 7. Contextual Quality Metrics (The Logic Upgrade)
+    # We ask the LLM to look at 'subcategory' and pick the scientifically correct metric.
     config_builder.add_column(
         LLMStructuredColumnConfig(
-            name="quality_metrics",
+            name="qc_data",
             model_alias=MODEL_ALIAS,
-            output_format=QualityMetric,
-            prompt="Generate realistic battery quality metrics for the {{ subcategory }} process.",
+            output_format=ProcessMeasurement,
+            prompt="""You are a QA Lead at a Battery Gigafactory.
+            Generate a realistic quality measurement for the step: '{{ subcategory }}'.
+            
+            Follow these physics rules:
+            - If 'Slurry Mixing': Measure Viscosity (target 3000-5000 Pa.s) or Solid Content (%).
+            - If 'Coating & Drying': Measure Electrode Thickness (target 120-150 microns) or Loading Level.
+            - If 'Calendering': Measure Density (target 2.5-3.0 g/cm³) or Thickness Uniformity.
+            - If 'Winding/Stacking': Measure Alignment Precision (target <0.5 mm) or Layer Count.
+            - If 'Electrolyte Filling': Measure Electrolyte Weight (g) or Wetting Percentage.
+            - If 'Cap Welding': Measure Weld Depth (mm) or Tensile Strength (N).
+            - If 'Initial Charging': Measure Voltage (V) or Current (A).
+            - If 'High-Temp Aging': Measure Voltage Drop (K-value) or Capacity Fade (%).
+            - If 'Final Grading': Measure Internal Resistance (target 1.5-3.0 mOhm) or Capacity (Ah).
+            
+            Simulate a realistic distribution where 90% are 'In Spec'.""",
         )
     )
 
@@ -182,9 +204,17 @@ def main():
     
     print("🚀 Generating preview (performing health checks)...")
     try:
-        preview = data_designer.preview(config_builder, num_records=3)
-        print("\n--- Sample Record ---")
+        preview = data_designer.preview(config_builder, num_records=5)
+        print("\n" + "="*80)
         preview.display_sample_record()
+        print("="*80)
+        
+        # Optional: Print a clean summary table to verify the "Context" logic worked
+        print("\n🔍 Contextual Verification (First 5 rows):")
+        df = preview.dataset
+        # Display key columns to verify polymorphic metrics
+        print(df[['subcategory', 'qc_data']].to_string())
+        
         print("\n✅ Success!")
     except Exception as e:
         print(f"\n❌ Generation failed. Error details:\n{e}")
