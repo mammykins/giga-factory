@@ -7,7 +7,9 @@
 [![Repo Size](https://img.shields.io/github/repo-size/mammykins/giga-factory)](https://github.com/mammykins/giga-factory)
 [![DeepWiki](https://img.shields.io/badge/Deep--Wiki-Enabled-brightgreen)](https://deepwiki.com/badge-maker?url=https%3A%2F%2Fdeepwiki.com%2Fmammykins%2Fgiga-factory)
 
-This project provides a framework for analyzing and understanding the production process of a gigafactory that manufactures a product at scale (e.g. batteries). It combines **LLM-powered synthetic data generation** with **process mining techniques** to identify bottlenecks, rework loops, correlations, and potential areas for optimization.
+![Gigafactory Overview](giga-factory-image.png)
+
+This project provides a framework for analysing and understanding the production process of a gigafactory that manufactures a product at scale (e.g. batteries). It combines **LLM-powered synthetic data generation** with **process mining techniques** to identify bottlenecks, rework loops, correlations, and potential areas for optimisation.
 
 The project features two data generation approaches:
 - **Enhanced LLM-based generator** (`gigafactory_data_designer.py`) - Uses NVIDIA NeMo Data Designer to create professionally engineered datasets with correlated variables, batch traceability, and physics-aware quality metrics
@@ -37,6 +39,9 @@ This project is intended for:
 ## Core Features
 
 ### 1. Enhanced LLM-Based Data Generation
+
+![Synthetic Data: A New Hope](synth_data_blog.png)
+
 Generate professionally engineered datasets using NVIDIA NeMo Data Designer with:
 - **Correlated Variables**: Simulate "bad shift" scenarios where Friday PM + Coating Room triggers +5°C temperature anomalies
 - **Batch Traceability**: Track individual batches through 5 sequential manufacturing steps (Slurry Mixing → Coating & Drying → Calendering → Winding/Stacking → Final Grading)
