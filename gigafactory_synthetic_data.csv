@@ -1,0 +1,1072 @@
+shift,process_step,subcategory,case_id,activity,location,resource,qc_data,ambient_temp_c,operator_log
+Friday_AM,5,Final Grading,BATCH-017,Formation & Aging,Formation_Lab,"Anthony Campbell (Education officer, museum)","{'metric_name': 'Internal Resistance', 'value': 2.1, 'unit': 'mOhm', 'status': 'In Spec'}",21.97,"**Telegraphic Operator Log – Batch BATCH-017**  
+**Step:** Final Grading  
+**Shift:** Friday_AM  
+**Location:** Formation_Lab  
+**Ambient Temp:** 21.97 °C  
+
+- Internal Resistance: **2.1 mOhm**  
+- Status: **In Spec**  
+- **Process nominal**  
+
+---  
+
+*No further action required.*"
+Tuesday_AM,2,Coating & Drying,BATCH-018,Electrode Manufacturing,Coating_Room,"Howard Collins (Secretary, company)","{'metric_name': 'Electrode Thickness', 'value': 135.2, 'unit': 'microns', 'status': 'In Spec'}",22.19,"**LOG: BATCH-018 | Coating & Drying | Tuesday_AM | Coating_Room | 22.19°C**  
+**Electrode Thickness:** 135.2 microns  
+**Status:** In Spec  
+**Note:** Process nominal.  
+
+---  
+*No root cause analysis required. No HVAC concerns noted (shift is Tuesday_AM).*"
+Wednesday_AM,1,Slurry Mixing,BATCH-006,Electrode Manufacturing,Electrode_Wing,Arthur Jones (Clinical biochemist),"{'metric_name': 'Slurry Viscosity', 'value': 3200, 'unit': 'Pa.s', 'status': 'In Spec'}",20.55,"**Telegraphic Operator Log – Batch BATCH-006**  
+**Step:** Slurry Mixing  
+**Shift:** Wednesday_AM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 20.55 °C  
+
+- **Slurry Viscosity:** 3200 Pa·s  
+- **Status:** In Spec → **Process nominal**  
+
+*No further action required.*  
+
+---  
+
+**Note:** No Friday_PM shift at Coating_Room with elevated temperature was encountered; therefore HVAC concerns are not applicable."
+Monday_PM,4,Winding/Stacking,BATCH-004,Cell Assembly,Assembly_Floor,"Bethany Sharp (Psychologist, sport and exercise)","{'metric_name': 'Alignment Precision', 'value': 0.35, 'unit': 'mm', 'status': 'In Spec'}",21.96,"**Telegraphic Operator Log – BATCH-004**  
+**Step:** Winding/Stacking  
+**Shift:** Monday_PM  
+**Location:** Assembly_Floor  
+**Ambient Temp:** 21.96 °C  
+
+- **Alignment Precision:** 0.35 mm  
+- **Status:** In Spec → **Process nominal**  
+
+*No further action required.*"
+Wednesday_PM,4,Winding/Stacking,BATCH-005,Cell Assembly,Assembly_Floor,Charles Walton (Armed forces logistics/support/administrative officer),"{'metric_name': 'Alignment Precision', 'value': 0.35, 'unit': 'mm', 'status': 'In Spec'}",20.5,"**Telegraphic Operator Log – Batch BATCH-005**  
+**Step:** Winding/Stacking  
+**Shift:** Wednesday_PM | **Location:** Assembly_Floor | **Ambient Temp:** 20.5°C  
+**Alignment Precision:** 0.35 mm  
+**Status:** In Spec  
+
+→ Process nominal.  
+
+*Note: No deviation detected. No root cause analysis required. HVAC conditions not applicable (shift not Friday_PM, location not Coating_Room).*"
+Tuesday_AM,5,Final Grading,BATCH-008,Formation & Aging,Formation_Lab,Terence Vincent (Geographical information systems officer),"{'metric_name': 'Internal Resistance', 'value': 2.4, 'unit': 'mOhm', 'status': 'In Spec'}",20.51,"**Operator Log – Batch BATCH-008**  
+**Step:** Final Grading  
+**Shift:** Tuesday_AM  
+**Location:** Formation_Lab  
+**Ambient Temp:** 20.51 °C  
+
+- **Internal Resistance:** 2.4 mOhm  
+- **Status:** In Spec  
+- **Action:** Process nominal  
+
+*No further action required.*"
+Monday_AM,5,Final Grading,BATCH-017,Formation & Aging,Formation_Lab,Kim James (Animal nutritionist),"{'metric_name': 'Internal Resistance', 'value': 2.4, 'unit': 'mOhm', 'status': 'In Spec'}",20.52,"**Telegraphic Operator Log – Batch BATCH-017**  
+**Step:** Final Grading  
+**Shift:** Monday_AM  
+**Location:** Formation_Lab  
+**Ambient Temp:** 20.52 °C  
+
+- **Internal Resistance:** 2.4 mΩ  
+- **Status:** In Spec  
+
+**Action:** Process nominal.  
+
+---  
+
+*No deviation detected; no root‑cause analysis required.*"
+Friday_AM,1,Slurry Mixing,BATCH-021,Electrode Manufacturing,Electrode_Wing,Dawn Ashton (Charity fundraiser),"{'metric_name': 'Slurry Viscosity', 'value': 3500, 'unit': 'Pa.s', 'status': 'In Spec'}",19.96,"**Log Entry – BATCH-021 – Slurry Mixing**  
+**Shift:** Friday_AM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 19.96 °C  
+
+- **Measured Slurry Viscosity:** 3500 Pa·s  
+- **Status Flag:** **In Spec**  
+
+**Interpretation:**  
+- Process nominal – no corrective action required.  
+
+*Note:* No HVAC concerns; shift is Friday_AM, not Friday_PM, and temperature is within normal range."
+Monday_PM,2,Coating & Drying,BATCH-003,Electrode Manufacturing,Coating_Room,Charlotte Miller (Soil scientist),"{'metric_name': 'Electrode Thickness', 'value': 138.5, 'unit': 'microns', 'status': 'In Spec'}",24.79,"**Operator Log – Batch BATCH-003**  
+**Step:** Coating & Drying  
+**Shift:** Monday_PM  
+**Location:** Coating_Room  
+**Ambient Temp:** 24.79 °C  
+
+- **Electrode Thickness:** 138.5 µm  
+- **Status:** **In Spec**  
+
+**Notes:**  
+- Process nominal.  
+- No tolerance warnings or critical failures observed.  
+- No HVAC concerns noted for this shift."
+Tuesday_PM,1,Slurry Mixing,BATCH-016,Electrode Manufacturing,Electrode_Wing,Denise Coates (Commercial/residential surveyor),"{'metric_name': 'Slurry Viscosity', 'value': 3250, 'unit': 'Pa.s', 'status': 'In Spec'}",22.41,"**LOG - BATCH-016 | STEP: Slurry Mixing | SHIFT: Tuesday_PM | LOC: Electrode_Wing**  
+Ambient Temp: 22.41°C  
+Slurry Viscosity: 3250 Pa·s  
+Status: **In Spec**  
+→ **Process nominal**  
+
+*Note: No HVAC deviation detected. Friday_PM shift not active.*"
+Wednesday_PM,5,Final Grading,BATCH-004,Formation & Aging,Formation_Lab,Frank Evans (Electronics engineer),"{'metric_name': 'Internal Resistance', 'value': 2.4, 'unit': 'mOhm', 'status': 'In Spec'}",21.62,"**Operator Log – Batch BATCH-004 – Final Grading**  
+**Shift:** Wednesday_PM **Location:** Formation_Lab **Ambient Temp:** 21.62 °C  
+**Internal Resistance:** 2.4 mΩ **Status:** In Spec  
+
+- Process nominal.  
+- No tolerance warning or critical fail detected.  
+- No HVAC concerns noted for Friday_PM shift at Coating_Room.   (All parameters within normal operating envelope.)"
+Monday_AM,4,Winding/Stacking,BATCH-010,Cell Assembly,Assembly_Floor,Lydia Edwards (Nature conservation officer),"{'metric_name': 'Alignment Precision', 'value': 0.35, 'unit': 'mm', 'status': 'In Spec'}",20.35,"**Telegraphic Operator Log – BATCH-010**  
+**Step:** Winding/Stacking  
+**Shift:** Monday_AM  
+**Location:** Assembly_Floor  
+**Ambient Temp:** 20.35°C  
+
+- Alignment Precision: 0.35 mm → **In Spec**  
+- **Process nominal**  
+
+*No further action required.*"
+Wednesday_AM,2,Coating & Drying,BATCH-021,Electrode Manufacturing,Coating_Room,Sarah Pearson (Museum education officer),"{'metric_name': 'Electrode Thickness', 'value': 132.5, 'unit': 'microns', 'status': 'In Spec'}",20.65,"**Operator Log – Batch BATCH-021**  
+**Step:** Coating & Drying  
+**Shift:** Wednesday_AM  
+**Location:** Coating_Room  
+**Ambient Temp:** 20.65 °C  
+
+- Recorded Electrode Thickness: **132.5 µm**  
+- Status: **In Spec**  
+
+**Action:** Process nominal.  
+
+**Notes:** No tolerance warnings or critical failures observed. No HVAC concerns noted for this shift."
+Tuesday_PM,2,Coating & Drying,BATCH-017,Electrode Manufacturing,Coating_Room,Yvonne Smith (Aeronautical engineer),"{'metric_name': 'Electrode Thickness', 'value': 135.2, 'unit': 'microns', 'status': 'In Spec'}",22.31,"**Log Entry – BATCH-017 | Coating & Drying | Tuesday_PM**  
+- **Location:** Coating_Room  
+- **Ambient Temp:** 22.31 °C  
+- **Electrode Thickness:** 135.2 µm  
+- **Status:** **In Spec**  
+- **Action:** Process nominal.  
+
+*No tolerance warnings or critical failures observed.*  
+
+---  
+
+*If operating on a Friday_PM shift in Coating_Room with elevated temperature, note possible HVAC malfunction.*"
+Monday_PM,2,Coating & Drying,BATCH-021,Electrode Manufacturing,Coating_Room,"Jason Ahmed (Engineer, drilling)","{'metric_name': 'Electrode Thickness', 'value': 138.5, 'unit': 'microns', 'status': 'In Spec'}",21.71,"**Telegraphic Operator Log – Batch BATCH-021**  
+**Step:** Coating & Drying  
+**Shift:** Monday_PM  
+**Location:** Coating_Room  
+**Ambient Temp:** 21.71 °C  
+
+- Recorded Electrode Thickness: **138.5 µm**  
+- Status: **In Spec** → **Process nominal**  
+
+*No further action required.*"
+Thursday_PM,3,Calendering,BATCH-005,Electrode Manufacturing,Electrode_Wing,Hollie Johnson (Physiotherapist),"{'metric_name': 'Calendering Density', 'value': 2.73, 'unit': 'g/cm³', 'status': 'In Spec'}",22.2,"**Telegraphic Operator Log – BATCH-005**  
+**Step:** Calendering  
+**Shift:** Thursday_PM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 22.2°C  
+**Calendering Density:** 2.73 g/cm³  
+**Status:** In Spec  
+
+→ Process nominal.  
+
+*Note: No anomaly detected. No HVAC or shift-specific concerns applicable.*"
+Friday_PM,3,Calendering,BATCH-016,Electrode Manufacturing,Electrode_Wing,Lucy Ahmed (Mudlogger),"{'metric_name': 'Calendering Density', 'value': 2.68, 'unit': 'g/cm³', 'status': 'In Spec'}",19.46,"**LOG: BATCH-016 | STEP: Calendering | SHIFT: Friday_PM | LOC: Electrode_Wing**  
+**AMB TEMP: 19.46°C**  
+**CALIPER DENSITY: 2.68 g/cm³**  
+**STATUS: In Spec**  
+**NOTE: Process nominal**"
+Friday_AM,4,Winding/Stacking,BATCH-013,Cell Assembly,Assembly_Floor,"Carly Martin (Engineer, technical sales)","{'metric_name': 'Alignment Precision', 'value': 0.35, 'unit': 'mm', 'status': 'In Spec'}",20.89,"**LOG – BATCH-013 | Winding/Stacking | Friday_AM**  
+- Ambient Temp: 20.89°C  
+- Alignment Precision: 0.35 mm  
+- Status: **In Spec** → **Process nominal**  
+
+*No further action required.*"
+Tuesday_AM,5,Final Grading,BATCH-012,Formation & Aging,Formation_Lab,Dean Lewis (Public affairs consultant),"{'metric_name': 'Internal Resistance', 'value': 2.3, 'unit': 'mOhm', 'status': 'In Spec'}",21.25,"**BATCH-012 | Final Grading | Tuesday_AM | Formation_Lab | 21.25°C**  
+**IR: 2.3 mOhm | Status: In Spec**  
+→ Process nominal.  
+
+*Note: No HVAC concerns (not Friday_PM / Coating_Room).*"
+Monday_AM,1,Slurry Mixing,BATCH-006,Electrode Manufacturing,Electrode_Wing,Howard Jones (Freight forwarder),"{'metric_name': 'Slurry Viscosity', 'value': 3450, 'unit': 'Pa.s', 'status': 'In Spec'}",19.08,"**Log Entry: BATCH-006 | Slurry Mixing | Monday_AM | Electrode_Wing**  
+- Ambient Temp: 19.08°C  
+- Slurry Viscosity: 3450 Pa.s  
+- Status: **In Spec**  
+- **Process nominal**  
+
+---  
+*Note: No root cause analysis required (status = In Spec). HVAC conditions not applicable (shift = Monday_AM, not Friday_PM).*"
+Thursday_PM,1,Slurry Mixing,BATCH-004,Electrode Manufacturing,Electrode_Wing,Gerard Brookes (Naval architect),"{'metric_name': 'Slurry Viscosity', 'value': 3200, 'unit': 'Pa.s', 'status': 'In Spec'}",21.82,"**Operator Log – Batch BATCH-004**  
+**Step:** Slurry Mixing  
+**Shift:** Thursday_PM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 21.82 °C  
+
+- Slurry Viscosity: **3200 Pa·s**  
+- Status: **In Spec** → **Process nominal**  
+
+*No further action required.*"
+Thursday_PM,1,Slurry Mixing,BATCH-005,Electrode Manufacturing,Electrode_Wing,"Josh Kaur (Nurse, children's)","{'metric_name': 'Slurry Viscosity', 'value': 3450, 'unit': 'Pa.s', 'status': 'In Spec'}",23.26,"**Operator Log – Batch BATCH-005**  
+**Step:** Slurry Mixing  
+**Shift:** Thursday_PM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 23.26 °C  
+
+- **Slurry Viscosity:** 3450 Pa·s  
+- **Status:** In Spec → **Process nominal**  
+
+*No deviation detected; operation proceeding within normal parameters.*"
+Monday_AM,2,Coating & Drying,BATCH-017,Electrode Manufacturing,Coating_Room,Natalie Watkins (Therapeutic radiographer),"{'metric_name': 'Electrode Thickness', 'value': 138.5, 'unit': 'microns', 'status': 'In Spec'}",19.37,"**LOG: BATCH-017 | Coating & Drying | Monday_AM | Coating_Room | 19.37°C**  
+Electrode Thickness: **138.5 µm**  
+Status: **In Spec**  
+→ **Process nominal.**  
+
+---  
+*Note: No HVAC anomalies reported. Friday_PM shift not applicable.*"
+Monday_PM,5,Final Grading,BATCH-011,Formation & Aging,Formation_Lab,Reece Atkinson (Dealer),"{'metric_name': 'Internal Resistance', 'value': 2.4, 'unit': 'mOhm', 'status': 'In Spec'}",19.86,"LOG: BATCH-011 | Final Grading | Monday_PM | Formation_Lab | 19.86°C  
+INTERNAL RESISTANCE: 2.4 mOhm | STATUS: In Spec  
+PROCESS NOMINAL  
+---  
+*Note: No deviation detected. No root cause analysis required. HVAC status: nominal.*"
+Wednesday_AM,2,Coating & Drying,BATCH-015,Electrode Manufacturing,Coating_Room,Brenda Harrison (Immigration officer),"{'metric_name': 'Electrode Thickness', 'value': 135.2, 'unit': 'microns', 'status': 'In Spec'}",22.8,"**Telegraphic Operator Log – Batch BATCH-015**  
+**Step:** Coating & Drying  
+**Shift:** Wednesday_AM  
+**Location:** Coating_Room  
+**Ambient Temp:** 22.8 °C  
+
+- Electrode Thickness: **135.2 µm**  
+- Status: **In Spec** → **Process nominal**  
+
+*No action required.*  
+
+---  
+
+*If a **Tolerance Warning** or **Critical Fail** had occurred, a root‑cause note would be inserted here (e.g., uneven spray nozzle alignment, insufficient drying airflow, or moisture ingress).*  
+
+*If the incident had occurred on a **Friday_PM** shift in Coating_Room with elevated temperature, the log would reference possible **HVAC malfunction** or **set‑point drift**.*"
+Friday_PM,4,Winding/Stacking,BATCH-016,Cell Assembly,Assembly_Floor,"Ashley Nelson (Civil engineer, contracting)","{'metric_name': 'Winding/Stacking Alignment Precision', 'value': 0.35, 'unit': 'mm', 'status': 'In Spec'}",20.13,"**Operator Log – Batch BATCH-016**  
+**Step:** Winding/Stacking  
+**Shift:** Friday_PM  
+**Location:** Assembly_Floor  
+**Ambient Temp:** 20.13 °C  
+
+- **Alignment Precision:** 0.35 mm  
+- **Status:** In Spec  
+
+**Action:** Process nominal.  
+
+*Note: No HVAC or temperature concerns observed for the Friday_PM shift at Coating_Room.*"
+Monday_AM,4,Winding/Stacking,BATCH-012,Cell Assembly,Assembly_Floor,"Stephanie Farmer (Surveyor, minerals)","{'metric_name': 'Winding Alignment Precision', 'value': 0.35, 'unit': 'mm', 'status': 'In Spec'}",23.9,"**Operator Log – BATCH-012**  
+**Step:** Winding/Stacking  
+**Shift:** Monday_AM  
+**Location:** Assembly_Floor  
+**Ambient Temp:** 23.9 °C  
+
+- **Winding Alignment Precision:** 0.35 mm  
+- **Status:** In Spec  
+
+**Action:** Process nominal.  
+
+---  
+
+*No further notes required.*"
+Tuesday_AM,5,Final Grading,BATCH-006,Formation & Aging,Formation_Lab,Mary Lucas (Education administrator),"{'metric_name': 'Internal Resistance', 'value': 2.1, 'unit': 'mOhm', 'status': 'In Spec'}",22.16,"**Batch BATCH-006 – Final Grading**  
+Shift: Tuesday_AM | Location: Formation_Lab | Ambient Temp: 22.16 °C  
+Internal Resistance: **2.1 mΩ** | Status: **In Spec**  
+
+- **Process nominal**.  
+- No tolerance warning or critical fail detected.  
+- No HVAC concerns (not a Friday_PM/Coating_Room scenario)."
+Thursday_PM,2,Coating & Drying,BATCH-013,Electrode Manufacturing,Coating_Room,Dylan Hayward (Market researcher),"{'metric_name': 'Electrode Thickness', 'value': 138.7, 'unit': 'microns', 'status': 'In Spec'}",20.47,"**BATCH-013 | Coating & Drying | Thursday_PM | Coating_Room | 20.47°C**  
+Electrode Thickness: 138.7 µm → **In Spec**  
+→ *Process nominal*  
+
+**Notes**:  
+- No tolerance warnings or critical fails.  
+- No HVAC issues detected (temp within range; Friday_PM not active).  
+- All parameters stable; no root cause analysis required.  
+
+*Log end.*"
+Thursday_PM,2,Coating & Drying,BATCH-009,Electrode Manufacturing,Coating_Room,Hugh Martin (Public house manager),"{'metric_name': 'Electrode Thickness', 'value': 135.2, 'unit': 'microns', 'status': 'In Spec'}",21.93,"**Log Entry – BATCH-009 | Coating & Drying | Thursday_PM**  
+- **Location:** Coating_Room  
+- **Ambient Temp:** 21.93 °C  
+- **Electrode Thickness:** 135.2 µm  
+- **Status:** In Spec → **Process nominal**  
+
+*No further action required.*"
+Friday_PM,1,Slurry Mixing,BATCH-001,Electrode Manufacturing,Electrode_Wing,Melanie Howard (Social worker),"{'metric_name': 'Slurry Viscosity', 'value': 3450, 'unit': 'Pa.s', 'status': 'In Spec'}",22.02,"**Telegraphic Operator Log – Batch BATCH-001**  
+*Step: Slurry Mixing*  
+*Shift: Friday_PM | Location: Electrode_Wing | Ambient Temp: 22.02 °C*  
+
+- Slurry Viscosity: **3450 Pa·s**  
+- Status: **In Spec** → **Process nominal**  
+
+*Notes:* No action required; viscosity within acceptable range.  
+
+---  
+
+*If future status were “Tolerance Warning” or “Critical Fail”, a root‑cause analysis would be appended (e.g., insufficient agitation, temperature drift, or raw‑material variance).*  
+
+*If operating in Coating_Room on a Friday_PM shift with elevated temperature, an HVAC issue would be flagged.*"
+Tuesday_PM,4,Winding/Stacking,BATCH-017,Cell Assembly,Assembly_Floor,Suzanne Vincent (Patent examiner),"{'metric_name': 'Alignment Precision', 'value': 0.38, 'unit': 'mm', 'status': 'In Spec'}",20.49,"**Telegraphic Operator Log – Batch BATCH-017**  
+**Step:** Winding/Stacking  
+**Shift:** Tuesday_PM | **Location:** Assembly_Floor | **Ambient Temp:** 20.49°C  
+
+- **Alignment Precision:** 0.38 mm  
+- **Status:** In Spec  
+- **Action:** Process nominal  
+
+*No deviation. No root cause analysis required.*  
+*No HVAC concerns — shift not Friday_PM, and location not Coating_Room.*"
+Friday_PM,4,Winding/Stacking,BATCH-015,Cell Assembly,Assembly_Floor,Linda Carter (Air traffic controller),"{'metric_name': 'Winding/Stacking Alignment Precision', 'value': 0.42, 'unit': 'mm', 'status': 'In Spec'}",21.34,"**Telegraphic Operator Log – Batch BATCH-015**  
+**Step:** Winding/Stacking  
+**Shift:** Friday_PM  
+**Location:** Assembly_Floor  
+**Ambient Temp:** 21.34 °C  
+
+- **Alignment Precision:** 0.42 mm  
+- **Status:** In Spec → **Process nominal**  
+
+*No further action required.*"
+Monday_PM,4,Winding/Stacking,BATCH-014,Cell Assembly,Assembly_Floor,Derek Ward (Nutritional therapist),"{'metric_name': 'Alignment Precision', 'value': 0.32, 'unit': 'mm', 'status': 'In Spec'}",21.21,"**Telegraphic Operator Log – Batch BATCH-014**  
+**Step:** Winding/Stacking  
+**Shift:** Monday_PM  
+**Location:** Assembly_Floor  
+**Ambient Temp:** 21.21°C  
+
+- **Alignment Precision:** 0.32 mm  
+- **Status:** In Spec  
+- **Note:** Process nominal  
+
+---  
+
+*No further action required.*"
+Monday_AM,5,Final Grading,BATCH-018,Formation & Aging,Formation_Lab,"Julian Green (Engineer, maintenance (IT))","{'metric_name': 'Internal Resistance', 'value': 2.4, 'unit': 'mOhm', 'status': 'In Spec'}",20.97,"**Telegraphic Operator Log – Batch BATCH-018**  
+**Step:** Final Grading  
+**Shift:** Monday_AM  
+**Location:** Formation_Lab  
+**Ambient Temp:** 20.97 °C  
+
+- Internal Resistance: **2.4 mOhm** – **Status:** *In Spec*  
+- Action: **Process nominal**  
+
+*No further remarks.*"
+Thursday_AM,5,Final Grading,BATCH-009,Formation & Aging,Formation_Lab,Jennifer Connolly (Information systems manager),"{'metric_name': 'Internal Resistance', 'value': 2.1, 'unit': 'mOhm', 'status': 'In Spec'}",22.26,"**Log Entry – Batch BATCH-009 – Final Grading**  
+**Shift:** Thursday_AM | **Location:** Formation_Lab | **Ambient Temp:** 22.26 °C  
+**Internal Resistance:** 2.1 mOhm | **Status:** In Spec  
+
+- Process nominal.  
+- No tolerance warning or critical fail observed.  
+- No HVAC concerns noted (not a Friday_PM/Coating_Room scenario)."
+Tuesday_PM,5,Final Grading,BATCH-012,Formation & Aging,Formation_Lab,Mohamed Brown (Early years teacher),"{'metric_name': 'Internal Resistance', 'value': 2.3, 'unit': 'mOhm', 'status': 'In Spec'}",21.57,"**BATCH-012 | Final Grading | Tuesday_PM | Formation_Lab**  
+Ambient: 21.57°C  
+Internal Resistance: 2.3 mOhm  
+Status: In Spec  
+→ Process nominal."
+Tuesday_PM,3,Calendering,BATCH-016,Electrode Manufacturing,Electrode_Wing,"Joe Harrison (Engineer, electrical)","{'metric_name': 'Calendering Density', 'value': 2.68, 'unit': 'g/cm³', 'status': 'In Spec'}",22.3,"**Telegraphic Operator Log – Batch BATCH-016**  
+**Step:** Calendering  
+**Shift:** Tuesday_PM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 22.3 °C  
+
+- **Calendering Density:** 2.68 g/cm³  
+- **Status:** In Spec  
+- **Note:** Process nominal.  
+
+*No deviation detected; system operating within normal parameters.*"
+Friday_AM,3,Calendering,BATCH-003,Electrode Manufacturing,Electrode_Wing,Katy Davis (Higher education lecturer),"{'metric_name': 'Calendering Density', 'value': 2.73, 'unit': 'g/cm³', 'status': 'In Spec'}",20.78,"**Telegraphic Operator Log – BATCH-003**  
+**Step:** Calendering  
+**Shift:** Friday_AM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 20.78 °C  
+
+- Recorded Calendering Density: **2.73 g/cm³**  
+- Status: **In Spec**  
+- **Process nominal**  
+
+---  
+
+*No deviations observed; system operating within specified parameters.*"
+Thursday_AM,5,Final Grading,BATCH-002,Formation & Aging,Formation_Lab,Leah Bibi (Medical secretary),"{'metric_name': 'Internal Resistance', 'value': 2.4, 'unit': 'mOhm', 'status': 'In Spec'}",19.95,"**THURSDAY_AM | FORMATION_LAB | BATCH-002 | FINAL_GRADING**  
+**LOG ENTRY:** 2.4 mOhm | In Spec → Process nominal  
+**NOTES:** Ambient 19.95°C, no deviation. HVAC stable; no Friday_PM context."
+Thursday_PM,1,Slurry Mixing,BATCH-004,Electrode Manufacturing,Electrode_Wing,Hugh Moore (Planning and development surveyor),"{'metric_name': 'Slurry Viscosity', 'value': 3200, 'unit': 'Pa.s', 'status': 'In Spec'}",22.38,"**Telegraphic Operator Log – Batch BATCH-004**  
+**Step:** Slurry Mixing  
+**Shift:** Thursday_PM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 22.38 °C  
+
+- **Slurry Viscosity:** 3200 Pa·s  
+- **Status:** In Spec  
+
+**Interpretation:**  
+- Process nominal.  
+
+**Notes:**  
+- No HVAC concerns; temperature within normal range.  
+- No further action required."
+Friday_AM,3,Calendering,BATCH-013,Electrode Manufacturing,Electrode_Wing,Billy Tomlinson (IT technical support officer),"{'metric_name': 'Calendering Density', 'value': 2.78, 'unit': 'g/cm³', 'status': 'In Spec'}",23.95,"**Telegraphic Operator Log – Batch BATCH-013**  
+**Step:** Calendering  
+**Shift:** Friday_AM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 23.95 °C  
+
+- **Calendering Density:** 2.78 g/cm³  
+- **Status:** In Spec → **Process nominal**  
+
+*No deviation noted; operation proceeding within normal parameters.*  
+
+---  
+
+*If later shift (Friday_PM) occurs in Coating_Room with elevated temperature, add note on HVAC performance.*"
+Tuesday_AM,5,Final Grading,BATCH-021,Formation & Aging,Formation_Lab,Tracy Williams (Research scientist (life sciences)),"{'metric_name': 'Internal Resistance', 'value': 2.4, 'unit': 'mOhm', 'status': 'In Spec'}",21.89,"**TELEGRAPHIC OPERATOR LOG – BATCH BATCH-021**  
+**Step:** Final Grading  
+**Shift:** Tuesday_AM  
+**Location:** Formation_Lab  
+**Ambient Temp:** 21.89 °C  
+
+- **Internal Resistance:** 2.4 mΩ  
+- **Status:** In Spec  
+
+**Interpretation:** Process nominal.  
+
+*No root‑cause analysis required; no HVAC concerns (shift is not Friday_PM at Coating_Room).*"
+Wednesday_PM,1,Slurry Mixing,BATCH-002,Electrode Manufacturing,Electrode_Wing,Donald Holmes (Charity fundraiser),"{'metric_name': 'Slurry Viscosity', 'value': 3500, 'unit': 'Pa.s', 'status': 'In Spec'}",22.56,"**Electrode_Wing – Slurry Mixing – BATCH-002**  
+**Shift:** Wednesday_PM **Location:** Electrode_Wing **Ambient Temp:** 22.56 °C  
+**Slurry Viscosity:** 3500 Pa·s **Status:** In Spec  
+
+- Process nominal.  
+- No root‑cause analysis required.  
+- No HVAC concerns (not a Friday_PM Coating_Room operation)."
+Tuesday_AM,2,Coating & Drying,BATCH-006,Electrode Manufacturing,Coating_Room,Andrea Edwards (Phytotherapist),"{'metric_name': 'Electrode Thickness', 'value': 135.7, 'unit': 'microns', 'status': 'In Spec'}",18.8,"**Telegraphic Operator Log – Batch BATCH-006**  
+**Step:** Coating & Drying  
+**Shift:** Tuesday_AM  
+**Location:** Coating_Room  
+**Ambient Temp:** 18.8 °C  
+
+- Electrode Thickness: **135.7 µm**  
+- Status: **In Spec** → **Process nominal**  
+
+*No deviation detected; no root‑cause analysis required.*  
+
+---  
+
+*Note: No Friday_PM shift or elevated temperature conditions present; HVAC concerns not applicable.*"
+Thursday_PM,3,Calendering,BATCH-010,Electrode Manufacturing,Electrode_Wing,Jenna Connolly (Arts development officer),"{'metric_name': 'Calendering Density', 'value': 2.72, 'unit': 'g/cm³', 'status': 'In Spec'}",21.09,"**THURSDAY_PM | CALANDERING | BATCH-010**  
+Ambient: 21.09°C | Density: 2.72 g/cm³ | Status: In Spec  
+→ Process nominal.  
+
+---  
+*Note: No HVAC or shift anomalies triggered. All parameters within nominal range.*"
+Tuesday_PM,4,Winding/Stacking,BATCH-014,Cell Assembly,Assembly_Floor,Graham Jones (Geographical information systems officer),"{'metric_name': 'Winding Alignment Precision', 'value': 0.35, 'unit': 'mm', 'status': 'In Spec'}",21.72,"**Telegraphic Operator Log – Batch BATCH-014**  
+**Step:** Winding/Stacking  
+**Shift:** Tuesday_PM  
+**Location:** Assembly_Floor  
+**Ambient Temp:** 21.72°C  
+
+- Winding Alignment Precision: **0.35 mm**  
+- Status: **In Spec**  
+- **Process nominal.**  
+
+*Note: No deviation observed. No root cause analysis required under current conditions.*"
+Tuesday_AM,5,Final Grading,BATCH-002,Formation & Aging,Formation_Lab,Lauren Miller (Metallurgist),"{'metric_name': 'Internal Resistance', 'value': 2.2, 'unit': 'mOhm', 'status': 'In Spec'}",22.11,"**Batch BATCH-002 – Final Grading**  
+**Shift:** Tuesday_AM | **Location:** Formation_Lab | **Ambient Temp:** 22.11°C  
+**Internal Resistance:** 2.2 mΩ | **Status:** In Spec  
+
+→ **Process nominal**.  
+
+*No further action required.*"
+Monday_PM,3,Calendering,BATCH-019,Electrode Manufacturing,Electrode_Wing,"Helen Smith (Scientist, clinical (histocompatibility and immunogenetics))","{'metric_name': 'Calendering Density', 'value': 2.73, 'unit': 'g/cm³', 'status': 'In Spec'}",21.42,"**Telegraphic Operator Log – Batch BATCH-019**  
+**Step:** Calendering  
+**Shift:** Monday_PM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 21.42 °C  
+
+- **Calendering Density:** 2.73 g/cm³  
+- **Status:** In Spec  
+
+**Notes:**  
+- Process nominal.  
+- No tolerance warning or critical fail observed.  
+- No HVAC concerns; Friday_PM shift not applicable."
+Monday_AM,3,Calendering,BATCH-010,Electrode Manufacturing,Electrode_Wing,Geoffrey Pritchard (Local government officer),"{'metric_name': 'Calendering Density', 'value': 2.82, 'unit': 'g/cm³', 'status': 'In Spec'}",21.75,"**Telegraphic Operator Log – Batch BATCH-010**  
+**Step:** Calendering  
+**Shift:** Monday_AM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 21.75°C  
+
+- Recorded Calendering Density: **2.82 g/cm³**  
+- Status: **In Spec**  
+- Action: **Process nominal**  
+
+*Note: No deviation detected. No root cause analysis or HVAC reference required.*"
+Tuesday_PM,1,Slurry Mixing,BATCH-017,Electrode Manufacturing,Electrode_Wing,Frances Wilkinson (Purchasing manager),"{'metric_name': 'Slurry Viscosity', 'value': 3250, 'unit': 'Pa.s', 'status': 'In Spec'}",22.13,"**Telegraphic Operator Log – Batch BATCH-017**  
+**Step:** Slurry Mixing  
+**Shift:** Tuesday_PM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 22.13 °C  
+
+- **Slurry Viscosity:** 3250 Pa·s  
+- **Status:** In Spec  
+- **Note:** Process nominal  
+
+*No further action required.*"
+Friday_AM,2,Coating & Drying,BATCH-002,Electrode Manufacturing,Coating_Room,Joanna Edwards (Building surveyor),"{'metric_name': 'Electrode Thickness', 'value': 135.2, 'unit': 'microns', 'status': 'In Spec'}",21.76,"**Operator Log – Batch BATCH-002**  
+**Step:** Coating & Drying  
+**Shift:** Friday_AM  
+**Location:** Coating_Room  
+**Ambient Temp:** 21.76 °C  
+
+- Electrode Thickness: **135.2 µm**  
+- Status: **In Spec** → **Process nominal**  
+
+*No further action required.*"
+Wednesday_PM,1,Slurry Mixing,BATCH-005,Electrode Manufacturing,Electrode_Wing,Leon Murphy (Animal technologist),"{'metric_name': 'Slurry Viscosity', 'value': 3200, 'unit': 'Pa.s', 'status': 'In Spec'}",22.06,"**Operator Log – Batch BATCH-005 – Slurry Mixing**  
+**Shift:** Wednesday_PM **Location:** Electrode_Wing **Ambient Temp:** 22.06 °C  
+**Slurry Viscosity:** 3200 Pa·s **Status:** In Spec  
+
+- Process nominal.  
+- No deviation observed; viscosity within expected range for this batch.  
+- Routine monitoring continues; no corrective actions required at this time.  
+
+---  
+
+*Note:* No HVAC‑related concerns reported for the Friday_PM shift in Coating_Room; temperature remains within design limits."
+Wednesday_PM,4,Winding/Stacking,BATCH-011,Cell Assembly,Assembly_Floor,Josh Morris (Structural engineer),"{'metric_name': 'Winding Alignment Precision', 'value': 0.35, 'unit': 'mm', 'status': 'In Spec'}",22.44,"**Telegraphic Operator Log – Batch BATCH-011**  
+**Step:** Winding/Stacking  
+**Shift:** Wednesday_PM | **Location:** Assembly_Floor | **Ambient Temp:** 22.44°C  
+
+- **Winding Alignment Precision:** 0.35 mm  
+- **Status:** In Spec  
+- **Note:** Process nominal  
+
+*No deviation observed. No root cause analysis required.*  
+*No HVAC or Friday_PM shift conditions triggered.*"
+Friday_PM,3,Calendering,BATCH-009,Electrode Manufacturing,Electrode_Wing,Julia Ward (Facilities manager),"{'metric_name': 'Calendering Density', 'value': 2.73, 'unit': 'g/cm³', 'status': 'In Spec'}",22.34,"**Log Entry – BATCH-009 | Calendering**  
+**Shift:** Friday_PM **Location:** Electrode_Wing **Ambient Temp:** 22.34 °C  
+**Calendering Density:** 2.73 g/cm³ **Status:** In Spec  
+
+- Process nominal.  
+- No corrective action required.  
+
+*End of entry.*"
+Thursday_AM,5,Final Grading,BATCH-013,Formation & Aging,Formation_Lab,Donald Oliver (Colour technologist),"{'metric_name': 'Internal Resistance', 'value': 2.1, 'unit': 'mOhm', 'status': 'In Spec'}",21.22,"**Telegraphic Operator Log – Batch BATCH-013**  
+**Step:** Final Grading  
+**Shift:** Thursday_AM  
+**Location:** Formation_Lab  
+**Ambient Temp:** 21.22 °C  
+
+- Measured Internal Resistance: **2.1 mOhm**  
+- Status: **In Spec**  
+- Action: **Process nominal**  
+
+*No further action required.*"
+Thursday_AM,2,Coating & Drying,BATCH-014,Electrode Manufacturing,Coating_Room,Judith Herbert (Production engineer),"{'metric_name': 'Electrode Thickness', 'value': 135.2, 'unit': 'microns', 'status': 'In Spec'}",21.34,"**THURSDAY_AM | COATING_ROOM | 21.34°C**  
+**BATCH-014 | STEP: COATING & DRYING**  
+Electrode Thickness: 135.2 µm → **In Spec**  
+→ Process nominal.  
+
+*Note: No tolerance deviation. No HVAC alert triggered.*"
+Thursday_AM,5,Final Grading,BATCH-005,Formation & Aging,Formation_Lab,Damien Bowen (Quarry manager),"{'metric_name': 'Internal Resistance', 'value': 2.1, 'unit': 'mOhm', 'status': 'In Spec'}",21.55,"**Log Entry – Batch BATCH-005 – Final Grading**  
+**Shift:** Thursday_AM  
+**Location:** Formation_Lab  
+**Ambient Temp:** 21.55 °C  
+
+- **Internal Resistance:** 2.1 mΩ  
+- **Status:** In Spec  
+
+**Action:** Process nominal.  
+
+*Note:* No tolerance warning or critical fail observed. No HVAC concerns (Friday_PM shift not applicable)."
+Friday_PM,2,Coating & Drying,BATCH-001,Electrode Manufacturing,Coating_Room,Denis Brown (Forest/woodland manager),"{'metric_name': 'Electrode Thickness', 'value': 135.2, 'unit': 'microns', 'status': 'In Spec'}",26.93,"**Log Entry – Batch BATCH-001**  
+**Step:** Coating & Drying  
+**Shift:** Friday_PM  
+**Location:** Coating_Room  
+**Ambient Temp:** 26.93 °C  
+
+- Recorded Electrode Thickness: **135.2 µm**  
+- Status: **In Spec**  
+
+**Action:** Process nominal.  
+
+---  
+
+*No tolerance warning or critical fail observed. No HVAC anomaly noted for this run.*"
+Monday_PM,1,Slurry Mixing,BATCH-016,Electrode Manufacturing,Electrode_Wing,"Joyce Johnston (Horticulturist, commercial)","{'metric_name': 'Slurry Viscosity', 'value': 3450, 'unit': 'Pa.s', 'status': 'In Spec'}",23.39,"**Operator Log – Batch BATCH-016**  
+**Step:** Slurry Mixing  
+**Shift:** Monday_PM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 23.39 °C  
+
+- **Slurry Viscosity:** 3450 Pa·s  
+- **Status:** In Spec  
+
+**Action:** Process nominal.  
+
+*No further notes required.*"
+Wednesday_AM,2,Coating & Drying,BATCH-009,Electrode Manufacturing,Coating_Room,"Barry Carpenter (Designer, multimedia)","{'metric_name': 'Electrode Thickness', 'value': 135.2, 'unit': 'microns', 'status': 'In Spec'}",22.17,"**Operator Log – Batch BATCH-009**  
+**Step:** Coating & Drying  
+**Shift:** Wednesday_AM  
+**Location:** Coating_Room  
+**Ambient Temp:** 22.17 °C  
+
+- **Electrode Thickness:** 135.2 µm  
+- **Status:** In Spec → **Process nominal**  
+
+*No further action required.*  
+
+---  
+
+*If a future flag reads “Tolerance Warning” or “Critical Fail,” investigate possible causes such as uneven spray nozzle alignment, inconsistent slurry viscosity, or drying oven temperature gradients.*  
+
+*If the issue occurs during a Friday_PM shift in Coating_Room with elevated temperature, consider HVAC system performance and possible airflow restrictions.*"
+Friday_AM,4,Winding/Stacking,BATCH-013,Cell Assembly,Assembly_Floor,"Dean Nicholls (Engineer, maintenance)","{'metric_name': 'Alignment Precision', 'value': 0.42, 'unit': 'mm', 'status': 'In Spec'}",22.7,"**Log Entry – Batch BATCH-013**  
+**Step:** Winding/Stacking  
+**Shift:** Friday_AM  
+**Location:** Assembly_Floor  
+**Ambient Temp:** 22.7 °C  
+
+- **Alignment Precision:** 0.42 mm  
+- **Status:** In Spec  
+
+**Action:** Process nominal."
+Monday_AM,3,Calendering,BATCH-011,Electrode Manufacturing,Electrode_Wing,Dawn Hooper (Research scientist (maths)),"{'metric_name': 'Calendering Density', 'value': 2.7, 'unit': 'g/cm³', 'status': 'In Spec'}",23.69,"**Telegraphic Operator Log – Batch BATCH-011**  
+**Step:** Calendering  
+**Shift:** Monday_AM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 23.69 °C  
+
+- **Calendering Density:** 2.7 g/cm³  
+- **Status:** In Spec  
+
+**Action:** Process nominal.  
+
+---  
+
+*No tolerance warning or critical fail observed. No HVAC concerns (not a Friday PM Coating_Room scenario).*"
+Friday_PM,3,Calendering,BATCH-013,Electrode Manufacturing,Electrode_Wing,Bethan Atkins (Cartographer),"{'metric_name': 'Calendering Density', 'value': 2.78, 'unit': 'g/cm³', 'status': 'In Spec'}",21.7,"**Telegraphic Operator Log – Batch BATCH-013**  
+**Step:** Calendering  
+**Shift:** Friday_PM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 21.7 °C  
+
+- **Calendering Density:** 2.78 g/cm³  
+- **Status:** In Spec  
+
+**Note:** Process nominal.  
+
+---  
+
+*No tolerance warnings or critical failures observed.*  
+*No HVAC concerns reported for Friday_PM shift in Coating_Room.*"
+Monday_AM,5,Final Grading,BATCH-015,Formation & Aging,Formation_Lab,Donald Reynolds (Lawyer),"{'metric_name': 'Internal Resistance', 'value': 2.1, 'unit': 'mOhm', 'status': 'In Spec'}",21.31,"**Telegraphic Operator Log – Batch BATCH-015**  
+*Step: Final Grading*  
+*Shift: Monday_AM*  
+*Location: Formation_Lab*  
+*Ambient Temp: 21.31 °C*  
+
+- Internal Resistance: **2.1 mOhm** – **In Spec**  
+- Action: **Process nominal**  
+
+*No further action required.*"
+Wednesday_PM,3,Calendering,BATCH-004,Electrode Manufacturing,Electrode_Wing,Geoffrey Khan (Microbiologist),"{'metric_name': 'Calendering Density', 'value': 2.73, 'unit': 'g/cm³', 'status': 'In Spec'}",20.45,"**Telegraphic Operator Log – Batch BATCH-004**  
+**Step:** Calendering  
+**Shift:** Wednesday_PM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 20.45 °C  
+
+- **Calendering Density:** 2.73 g/cm³  
+- **Status:** In Spec  
+
+**Action:** Process nominal.  
+
+---  
+
+*No root‑cause analysis required; tolerance within limits.*  
+
+*No HVAC concerns (not a Friday_PM shift in Coating_Room).*"
+Wednesday_PM,5,Final Grading,BATCH-018,Formation & Aging,Formation_Lab,Aimee Smith (Volunteer coordinator),"{'metric_name': 'Internal Resistance', 'value': 2.1, 'unit': 'mOhm', 'status': 'In Spec'}",22.31,"**Telegraphic Operator Log – Batch BATCH-018**  
+*Step: Final Grading*  
+*Shift: Wednesday_PM | Location: Formation_Lab | Ambient Temp: 22.31°C*  
+
+- Measured Internal Resistance: **2.1 mOhm**  
+- Status: **In Spec**  
+- Action: **Process nominal**  
+
+*Note: No deviation detected. No root cause analysis required. HVAC conditions not applicable (shift not Friday_PM at Coating_Room).*"
+Monday_PM,3,Calendering,BATCH-013,Electrode Manufacturing,Electrode_Wing,George Watson (Photographer),"{'metric_name': 'Calendering Density', 'value': 2.78, 'unit': 'g/cm³', 'status': 'In Spec'}",20.25,"**Telegraphic Operator Log – Batch BATCH-013**  
+**Step:** Calendering  
+**Shift:** Monday_PM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 20.25°C  
+
+- Calendering Density: **2.78 g/cm³**  
+- Status: **In Spec**  
+- **Note:** Process nominal.  
+
+---  
+
+*No tolerance warning or critical fail observed. No HVAC issue noted (not a Friday_PM shift at Coating_Room).*"
+Monday_AM,4,Winding/Stacking,BATCH-012,Cell Assembly,Assembly_Floor,"Louis Sharpe (Loss adjuster, chartered)","{'metric_name': 'Alignment Precision', 'value': 0.38, 'unit': 'mm', 'status': 'In Spec'}",23.38,"**LOG ENTRY: BATCH-012 | STEP: Winding/Stacking | SHIFT: Monday_AM | LOCATION: Assembly_Floor**  
+**AMBIENT TEMP:** 23.38°C  
+**ALIGNMENT PRECISION:** 0.38 mm  
+**STATUS:** In Spec  
+**OPERATOR NOTE:** Process nominal  
+
+---  
+*No deviations detected. All parameters within tolerance. No root cause analysis required.*  
+*No HVAC concerns (shift/time does not match Friday_PM/Coating_Room scenario).*"
+Friday_PM,3,Calendering,BATCH-007,Electrode Manufacturing,Electrode_Wing,Stephen Ferguson (Further education lecturer),"{'metric_name': 'Calendering Density', 'value': 2.73, 'unit': 'g/cm³', 'status': 'In Spec'}",22.07,"**Telegraphic Operator Log – Batch BATCH-007**  
+**Step:** Calendering  
+**Shift:** Friday_PM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 22.07 °C  
+
+- Recorded Calendering Density: **2.73 g/cm³**  
+- Status: **In Spec** → **Process nominal**  
+
+*No deviation noted; no root‑cause analysis required.*"
+Friday_PM,5,Final Grading,BATCH-015,Formation & Aging,Formation_Lab,Chloe Marshall (Physiological scientist),"{'metric_name': 'Internal Resistance', 'value': 2.1, 'unit': 'mOhm', 'status': 'In Spec'}",22.65,"**Operator Log – Batch BATCH-015 – Final Grading**  
+*Shift: Friday_PM | Location: Formation_Lab | Ambient Temp: 22.65 °C*  
+
+- Recorded Internal Resistance: **2.1 mΩ**  
+- Status: **In Spec** → **Process nominal**  
+
+*No further action required.*  
+
+---  
+
+**If status had been:**  
+- **Tolerance Warning** – Potential root cause: Slight drift in plating thickness causing increased contact resistance.  
+- **Critical Fail** – Potential root cause: Contamination on the test fixture or a failing power supply module.  
+
+**Special note:**  
+- *Friday_PM shift at Coating_Room with elevated temperature* – **HVAC issue suspected**; verify cooling set‑point and airflow.   (Not applicable to this batch.)"
+Friday_PM,2,Coating & Drying,BATCH-006,Electrode Manufacturing,Coating_Room,Damien Robson (Economist),"{'metric_name': 'Electrode Thickness', 'value': 132.4, 'unit': 'microns', 'status': 'In Spec'}",27.2,"**Telegraphic Operator Log – Batch BATCH-006**  
+**Step:** Coating & Drying  
+**Shift:** Friday_PM | **Location:** Coating_Room | **Ambient Temp:** 27.2°C  
+
+- Electrode Thickness: **132.4 µm**  
+- Status: **In Spec**  
+- **Process nominal**  
+
+*Note: Ambient temperature slightly elevated; monitor HVAC performance.*"
+Friday_PM,5,Final Grading,BATCH-010,Formation & Aging,Formation_Lab,"Conor Knight (Therapist, art)","{'metric_name': 'Internal Resistance', 'value': 2.1, 'unit': 'mOhm', 'status': 'In Spec'}",20.39,"**Telegraphic Operator Log – BATCH-010**  
+*Shift: Friday_PM | Location: Formation_Lab | Ambient Temp: 20.39 °C*  
+
+- **Step:** Final Grading  
+- **Internal Resistance:** 2.1 mΩ  
+- **Status:** In Spec  
+- **Action:** Process nominal  
+
+*No deviation detected; no root‑cause analysis required.*  
+
+---  
+
+*If a “Tolerance Warning” or “Critical Fail” had occurred, the following notes would apply:*  
+- **Tolerance Warning:** Possible cause – slight over‑exposure during cure, leading to marginally higher resistance.  
+- **Critical Fail:** Possible cause – contamination of the coating layer or equipment drift in the measurement circuit.  
+
+*If the incident had occurred during a Friday_PM shift in the Coating_Room with elevated temperature, the log would have highlighted potential HVAC issues.*"
+Friday_PM,4,Winding/Stacking,BATCH-010,Cell Assembly,Assembly_Floor,Jordan Reynolds (Clinical psychologist),"{'metric_name': 'Alignment Precision', 'value': 0.38, 'unit': 'mm', 'status': 'In Spec'}",23.07,"**Operator Log – Batch BATCH-010**  
+**Step:** Winding/Stacking  
+**Shift:** Friday_PM | **Location:** Assembly_Floor  
+**Ambient Temp:** 23.07 °C  
+
+- **Alignment Precision:** 0.38 mm  
+- **Status:** In Spec  
+- **Note:** Process nominal  
+
+*No deviation detected; no root‑cause analysis required.*"
+Thursday_AM,4,Winding/Stacking,BATCH-017,Cell Assembly,Assembly_Floor,Wayne Roberts (Health and safety adviser),"{'metric_name': 'Alignment Precision', 'value': 0.28, 'unit': 'mm', 'status': 'In Spec'}",20.15,"**Operator Log – Batch BATCH-017**  
+**Step:** Winding/Stacking  
+**Shift:** Thursday_AM  
+**Location:** Assembly_Floor  
+**Ambient Temp:** 20.15 °C  
+
+- **Alignment Precision:** 0.28 mm  
+- **Status:** In Spec  
+- **Action:** Process nominal  
+
+*No further action required.*"
+Friday_AM,4,Winding/Stacking,BATCH-012,Cell Assembly,Assembly_Floor,Charlotte Ward (Financial manager),"{'metric_name': 'Winding Alignment Precision', 'value': 0.35, 'unit': 'mm', 'status': 'In Spec'}",19.78,"**Telegraphic Operator Log – BATCH-012**  
+**Step:** Winding/Stacking  
+**Shift:** Friday_AM  
+**Location:** Assembly_Floor  
+**Ambient Temp:** 19.78 °C  
+
+- Recorded **Winding Alignment Precision:** 0.35 mm  
+- **Status:** In Spec → **Process nominal**  
+
+*No further action required.*"
+Wednesday_PM,4,Winding/Stacking,BATCH-002,Cell Assembly,Assembly_Floor,Emily Rowley (Osteopath),"{'metric_name': 'Winding Alignment Precision', 'value': 0.32, 'unit': 'mm', 'status': 'In Spec'}",21.22,"**Operator Log – Batch BATCH-002**  
+**Step:** Winding/Stacking  
+**Shift:** Wednesday_PM  
+**Location:** Assembly_Floor  
+**Ambient Temp:** 21.22 °C  
+
+- **Winding Alignment Precision:** 0.32 mm  
+- **Status:** In Spec  
+
+**Action:** Process nominal.  
+
+*Note: No HVAC concerns observed; Friday_PM Coating_Room conditions not applicable.*"
+Friday_PM,1,Slurry Mixing,BATCH-004,Electrode Manufacturing,Electrode_Wing,Joshua Clarke (Product designer),"{'metric_name': 'Slurry Viscosity', 'value': 3500, 'unit': 'Pa.s', 'status': 'In Spec'}",21.14,"**Telegraphic Operator Log – Batch BATCH-004**  
+**Step:** Slurry Mixing  
+**Shift:** Friday_PM | **Location:** Electrode_Wing  
+**Ambient Temp:** 21.14 °C  
+
+- **Slurry Viscosity:** 3500 Pa·s  
+- **Status:** In Spec  
+
+**Action:** Process nominal.  
+
+*No tolerance warning or critical fail observed. No HVAC concerns noted for Friday_PM Coating_Room.*"
+Monday_PM,5,Final Grading,BATCH-003,Formation & Aging,Formation_Lab,Arthur Brown (Geochemist),"{'metric_name': 'Internal Resistance', 'value': 2.1, 'unit': 'mOhm', 'status': 'In Spec'}",20.69,"**Telegraphic Operator Log – Batch BATCH-003**  
+**Step:** Final Grading  
+**Shift:** Monday_PM  
+**Location:** Formation_Lab  
+**Ambient Temp:** 20.69 °C  
+**Internal Resistance:** 2.1 mΩ  
+**Status:** In Spec  
+
+- Process nominal.  
+- No further action required.  
+- Continue monitoring.  
+- End of log."
+Wednesday_PM,2,Coating & Drying,BATCH-016,Electrode Manufacturing,Coating_Room,Shannon James (Commercial/residential surveyor),"{'metric_name': 'Electrode Thickness', 'value': 132.5, 'unit': 'microns', 'status': 'In Spec'}",19.66,"**Operator Log – Batch BATCH-016**  
+**Step:** Coating & Drying  
+**Shift:** Wednesday_PM  
+**Location:** Coating_Room  
+**Ambient Temp:** 19.66 °C  
+
+- Recorded Electrode Thickness: **132.5 µm**  
+- Status: **In Spec** → **Process nominal**  
+
+*No deviation detected. No root‑cause analysis required.*  
+
+---  
+
+*End of log.*"
+Wednesday_PM,2,Coating & Drying,BATCH-013,Electrode Manufacturing,Coating_Room,Gavin West (Primary school teacher),"{'metric_name': 'Electrode Thickness', 'value': 138.2, 'unit': 'microns', 'status': 'In Spec'}",21.9,"**Telegraphic Operator Log – Batch BATCH-013**  
+**Step:** Coating & Drying  
+**Shift:** Wednesday_PM  
+**Location:** Coating_Room  
+**Ambient Temp:** 21.9 °C  
+
+- Recorded Electrode Thickness: **138.2 µm**  
+- Status: **In Spec** → **Process nominal**  
+
+*No action required.*  
+
+---  
+
+**Note:** No Friday_PM shift or elevated temperature conditions present; therefore no HVAC concerns."
+Monday_AM,5,Final Grading,BATCH-018,Formation & Aging,Formation_Lab,Katy Morris (Geophysicist/field seismologist),"{'metric_name': 'Internal Resistance', 'value': 2.4, 'unit': 'mOhm', 'status': 'In Spec'}",21.57,"**Telegraphic Operator Log – Batch BATCH-018**  
+**Step:** Final Grading  
+**Shift:** Monday_AM  
+**Location:** Formation_Lab  
+**Ambient Temp:** 21.57 °C  
+
+- Recorded **Internal Resistance = 2.4 mOhm**  
+- **Status:** In Spec  
+- **Note:** Process nominal  
+
+---  
+
+*No further action required.*"
+Tuesday_AM,5,Final Grading,BATCH-009,Formation & Aging,Formation_Lab,Jennifer Rogers (Electrical engineer),"{'metric_name': 'Internal Resistance', 'value': 2.4, 'unit': 'mOhm', 'status': 'In Spec'}",18.07,"**Telegraphic Operator Log – Batch BATCH-009**  
+*Final Grading – Tuesday_AM*  
+*Location: Formation_Lab | Ambient Temp: 18.07°C*  
+
+- Internal Resistance: **2.4 mOhm**  
+- Status: **In Spec**  
+
+**Action:** Process nominal.  
+
+---  
+
+*No tolerance warning or critical fail observed. No HVAC concerns applicable (shift is Tuesday_AM, not Friday_PM).*"
+Thursday_AM,3,Calendering,BATCH-006,Electrode Manufacturing,Electrode_Wing,"Toby Johnston (Surveyor, hydrographic)","{'metric_name': 'Calendering Density', 'value': 2.73, 'unit': 'g/cm³', 'status': 'In Spec'}",19.63,"**THU_AM | ELEC_WING | 19.63°C | BATCH-006 | CALANDERING**  
+**CAL_DENSITY: 2.73 g/cm³ | STATUS: In Spec**  
+→ Process nominal.  
+
+*Note: No tolerance warning or critical fail. No HVAC or Friday_PM context triggered.*"
+Friday_AM,3,Calendering,BATCH-008,Electrode Manufacturing,Electrode_Wing,Ben Gregory (Magazine features editor),"{'metric_name': 'Density', 'value': 2.78, 'unit': 'g/cm³', 'status': 'In Spec'}",21.84,"**Telegraphic Operator Log – Batch BATCH-008**  
+**Step:** Calendering  
+**Shift:** Friday_AM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 21.84 °C  
+
+- **Density:** 2.78 g/cm³  
+- **Status:** In Spec  
+- **Note:** Process nominal.  
+
+*No deviation observed.*"
+Friday_AM,1,Slurry Mixing,BATCH-020,Electrode Manufacturing,Electrode_Wing,"Jamie Lee (Engineer, manufacturing systems)","{'metric_name': 'Slurry Viscosity', 'value': 3450, 'unit': 'Pa.s', 'status': 'In Spec'}",19.98,"**Log Entry – BATCH-020 – Slurry Mixing**  
+- **Shift:** Friday_AM  
+- **Location:** Electrode_Wing  
+- **Ambient Temp:** 19.98 °C  
+- **Measured Slurry Viscosity:** 3450 Pa·s  
+- **Status:** In Spec  
+
+> **Process nominal.**  
+
+*No further action required.*  
+
+---  
+
+*If the status had been “Tolerance Warning” or “Critical Fail,” a brief root‑cause note would have been added (e.g., inadequate mixing speed or temperature drift).  
+*If this were a **Friday_PM** run in the **Coating_Room** with elevated temperature, an HVAC issue would have been flagged.*"
+Thursday_AM,1,Slurry Mixing,BATCH-008,Electrode Manufacturing,Electrode_Wing,Justin Martin (Camera operator),"{'metric_name': 'Slurry Viscosity', 'value': 3500, 'unit': 'Pa.s', 'status': 'In Spec'}",22.42,"**Operator Log – Batch BATCH-008**  
+**Step:** Slurry Mixing  
+**Shift:** Thursday_AM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 22.42 °C  
+
+- **Slurry Viscosity:** 3500 Pa·s  
+- **Status:** In Spec  
+
+**Log Entry:**  
+Process nominal.  
+
+---  
+
+*No tolerance warning or critical fail conditions observed. No HVAC issues to report.*"
+Monday_PM,4,Winding/Stacking,BATCH-019,Cell Assembly,Assembly_Floor,Glenn Armstrong (Senior tax professional/tax inspector),"{'metric_name': 'Alignment Precision', 'value': 0.32, 'unit': 'mm', 'status': 'In Spec'}",23.06,"**Telegraphic Operator Log – Batch BATCH-019**  
+**Step:** Winding/Stacking  
+**Shift:** Monday_PM  
+**Location:** Assembly_Floor  
+**Ambient Temp:** 23.06°C  
+
+- Alignment Precision: **0.32 mm**  
+- Status: **In Spec**  
+- **Process nominal.**  
+
+*Note: No tolerance warning or critical fail observed. No HVAC or Friday_PM shift conditions present.*"
+Friday_AM,1,Slurry Mixing,BATCH-011,Electrode Manufacturing,Electrode_Wing,Marc Richards (Stage manager),"{'metric_name': 'Slurry Viscosity', 'value': 3350, 'unit': 'Pa.s', 'status': 'In Spec'}",19.7,"**Telegraphic Operator Log – Batch BATCH-011**  
+*Step: Slurry Mixing*  
+*Shift: Friday_AM | Location: Electrode_Wing | Ambient Temp: 19.7 °C*  
+
+- **Slurry Viscosity:** 3350 Pa·s  
+- **Status:** In Spec  
+- **Note:** Process nominal.  
+
+*No further action required.*"
+Thursday_AM,5,Final Grading,BATCH-012,Formation & Aging,Formation_Lab,"Jennifer Martin (Engineer, structural)","{'metric_name': 'Internal Resistance', 'value': 2.2, 'unit': 'mOhm', 'status': 'In Spec'}",21.46,"**Thur AM - Formation_Lab - BATCH-012 - Final Grading**  
+21.46°C ambient  
+2.2 mOhm internal resistance – **In Spec** → *Process nominal*  
+
+---  
+
+*No tolerance warnings or critical failures observed.*  
+
+---  
+
+*Shift change: Friday PM – Coating_Room*  
+*Note: HVAC system operating above setpoint; monitor temperature stability.*"
+Monday_PM,3,Calendering,BATCH-010,Electrode Manufacturing,Electrode_Wing,"Maria Norman (Research officer, trade union)","{'metric_name': 'Calendering Density', 'value': 2.73, 'unit': 'g/cm³', 'status': 'In Spec'}",21.3,"**Telegraphic Operator Log – Batch BATCH-010**  
+**Step:** Calendering  
+**Shift:** Monday_PM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 21.3°C  
+
+- **Calendering Density:** 2.73 g/cm³  
+- **Status:** In Spec  
+- **Action:** Process nominal  
+
+*No deviation observed. No root cause analysis required.*  
+
+*Note: No HVAC or Friday_PM shift conditions present; no mention of elevated temperature or related issues.*"
+Friday_AM,1,Slurry Mixing,BATCH-004,Electrode Manufacturing,Electrode_Wing,Michelle Butler (Furniture designer),"{'metric_name': 'Slurry Viscosity', 'value': 3350, 'unit': 'Pa.s', 'status': 'In Spec'}",23.47,"**Batch BATCH-004 – Slurry Mixing**  
+**Shift:** Friday_AM | **Location:** Electrode_Wing | **Ambient Temp:** 23.47 °C  
+**Measured Slurry Viscosity:** 3350 Pa·s  
+**Status:** In Spec  
+
+- Process nominal.  
+
+---  
+
+*No further action required.*"
+Wednesday_AM,2,Coating & Drying,BATCH-005,Electrode Manufacturing,Coating_Room,Helen Wilkins (Holiday representative),"{'metric_name': 'Electrode Thickness', 'value': 132.5, 'unit': 'microns', 'status': 'In Spec'}",24.13,"**BATCH-005 | Coating & Drying | Shift: Wednesday_AM | Location: Coating_Room | Temp: 24.13°C**  
+Electrode Thickness: 132.5 µm  
+Status: In Spec  
+→ Process nominal  
+
+*Note: No HVAC anomalies reported; ambient conditions stable.*"
+Monday_AM,2,Coating & Drying,BATCH-018,Electrode Manufacturing,Coating_Room,Joanna Parker (General practice doctor),"{'metric_name': 'Electrode Thickness', 'value': 135.2, 'unit': 'microns', 'status': 'In Spec'}",21.82,"**Log Entry – Coating & Drying – Batch BATCH-018**  
+**Shift:** Monday_AM  
+**Location:** Coating_Room  
+**Ambient Temp:** 21.82 °C  
+
+- Recorded Electrode Thickness: **135.2 µm**  
+- Status: **In Spec**  
+
+**Action:** Process nominal.  
+
+---  
+
+*No tolerance warnings or critical failures detected. No HVAC anomalies noted (not a Friday PM shift with elevated temperature).*"
+Thursday_PM,1,Slurry Mixing,BATCH-003,Electrode Manufacturing,Electrode_Wing,Michelle Smith (Dealer),"{'metric_name': 'Slurry Viscosity', 'value': 3450, 'unit': 'Pa.s', 'status': 'In Spec'}",19.8,"**Log Entry – Batch BATCH-003 – Slurry Mixing**  
+**Shift:** Thursday_PM | **Location:** Electrode_Wing | **Ambient Temp:** 19.8 °C  
+- **Slurry Viscosity:** 3450 Pa·s  
+- **Status:** In Spec  
+
+**Action:** Process nominal.  
+
+---  
+*No root‑cause analysis required; no HVAC concerns (shift is Thursday_PM, not Friday_PM).*"
+Tuesday_AM,5,Final Grading,BATCH-006,Formation & Aging,Formation_Lab,"Mohamed Graham (Surveyor, hydrographic)","{'metric_name': 'Internal Resistance', 'value': 2.3, 'unit': 'mOhm', 'status': 'In Spec'}",22.19,"**Operator Log – Batch BATCH-006**  
+**Step:** Final Grading  
+**Shift:** Tuesday_AM  
+**Location:** Formation_Lab  
+**Ambient Temp:** 22.19 °C  
+
+- **Internal Resistance:** 2.3 mΩ  
+- **Status:** In Spec  
+
+**Action:** Process nominal.  
+
+---  
+
+*No further notes required.*"
+Thursday_AM,4,Winding/Stacking,BATCH-015,Cell Assembly,Assembly_Floor,Paul Jones (Arts development officer),"{'metric_name': 'Alignment Precision', 'value': 0.35, 'unit': 'mm', 'status': 'In Spec'}",21.83,"**Log Entry – Batch BATCH-015**  
+**Step:** Winding/Stacking  
+**Shift:** Thursday_AM  
+**Location:** Assembly_Floor  
+**Ambient Temp:** 21.83 °C  
+**Alignment Precision:** 0.35 mm  
+**Status:** In Spec  
+
+**Entry:** Process nominal."
+Wednesday_PM,1,Slurry Mixing,BATCH-007,Electrode Manufacturing,Electrode_Wing,Kenneth Smith (Geochemist),"{'metric_name': 'Slurry Viscosity', 'value': 3450, 'unit': 'Pa.s', 'status': 'In Spec'}",19.3,"**Telegraphic Operator Log – Batch BATCH-007**  
+**Step:** Slurry Mixing  
+**Shift:** Wednesday_PM | **Location:** Electrode_Wing | **Ambient Temp:** 19.3 °C  
+**Measured Viscosity:** 3450 Pa·s  
+**Status:** In Spec  
+
+> Process nominal.  
+
+---  
+
+*No further action required.*"
+Monday_PM,2,Coating & Drying,BATCH-009,Electrode Manufacturing,Coating_Room,Janice Stevens (Optometrist),"{'metric_name': 'Electrode Thickness', 'value': 135, 'unit': 'microns', 'status': 'In Spec'}",20.49,"**Telegraphic Operator Log – Batch BATCH-009**  
+**Step:** Coating & Drying  
+**Shift:** Monday_PM  
+**Location:** Coating_Room  
+**Ambient Temp:** 20.49°C  
+
+- Electrode Thickness: 135 µm  
+- Status: **In Spec** → **Process nominal**  
+
+*No action required.*"
+Tuesday_AM,3,Calendering,BATCH-017,Electrode Manufacturing,Electrode_Wing,Martyn Jones (Occupational hygienist),"{'metric_name': 'Calendering Density', 'value': 2.73, 'unit': 'g/cm³', 'status': 'In Spec'}",21.3,"**Telegraphic Operator Log – Batch BATCH-017**  
+**Step:** Calendering  
+**Shift:** Tuesday_AM  
+**Location:** Electrode_Wing  
+**Ambient Temp:** 21.3°C  
+
+- **Calendering Density:** 2.73 g/cm³  
+- **Status:** In Spec  
+- **Note:** Process nominal  
+
+*No deviation. No root cause analysis required. HVAC conditions nominal.*"

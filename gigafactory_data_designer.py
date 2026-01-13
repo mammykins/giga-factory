@@ -19,6 +19,7 @@ from data_designer.essentials import (
     SubcategorySamplerParams,
     GaussianSamplerParams,
     UUIDSamplerParams,
+    UniformSamplerParams,
     ExpressionColumnConfig,
 )
 
@@ -80,50 +81,86 @@ def main():
     # 3. Add Core Samplers for Factory Operations
     print("🛠️  Configuring factory simulation columns...")
     
-    # Unique Traceability
+    # Batch Traceability: Generate batch numbers (will repeat across process steps)
+    # For 100 records with 5 process steps, we want ~20 unique batches
     config_builder.add_column(
         SamplerColumnConfig(
-            name="case_id",
-            sampler_type=SamplerType.UUID,
-            params=UUIDSamplerParams(prefix="BATCH-", short_form=True, uppercase=True),
+            name="batch_number",
+            sampler_type=SamplerType.UNIFORM,
+            params=UniformSamplerParams(low=1, high=21, decimal_places=0),
+            convert_to="int",
+            drop=True,
         )
     )
-
-    # Hierarchical Activity Logic
+    
+    # Create case_id from batch_number + process_step for traceability
+    config_builder.add_column(
+        ExpressionColumnConfig(
+            name="case_id",
+            expr="BATCH-{{ '%03d' % batch_number }}",
+        )
+    )
+    
+    # Work Shift (for correlation analysis)
     config_builder.add_column(
         SamplerColumnConfig(
-            name="activity",
+            name="shift",
             sampler_type=SamplerType.CATEGORY,
             params=CategorySamplerParams(
-                values=["Electrode Manufacturing", "Cell Assembly", "Formation & Aging"]
+                values=[
+                    "Monday_AM", "Monday_PM",
+                    "Tuesday_AM", "Tuesday_PM",
+                    "Wednesday_AM", "Wednesday_PM",
+                    "Thursday_AM", "Thursday_PM",
+                    "Friday_AM", "Friday_PM"
+                ]
             ),
         )
     )
 
+    # Process Step (for traceability - sequential manufacturing steps)
+    config_builder.add_column(
+        SamplerColumnConfig(
+            name="process_step",
+            sampler_type=SamplerType.CATEGORY,
+            params=CategorySamplerParams(
+                values=["1", "2", "3", "4", "5"]
+            ),
+        )
+    )
+    
+    # Activity and Subcategory (linked to process_step for logical flow)
     config_builder.add_column(
         SamplerColumnConfig(
             name="subcategory",
             sampler_type=SamplerType.SUBCATEGORY,
             params=SubcategorySamplerParams(
-                category="activity",
+                category="process_step",
                 values={
-                    "Electrode Manufacturing": [
-                        "Slurry Mixing",
-                        "Coating & Drying",
-                        "Calendering",
-                    ],
-                    "Cell Assembly": [
-                        "Winding/Stacking",
-                        "Electrolyte Filling",
-                        "Cap Welding",
-                    ],
-                    "Formation & Aging": [
-                        "Initial Charging",
-                        "High-Temp Aging",
-                        "Final Grading",
-                    ],
+                    "1": ["Slurry Mixing"],
+                    "2": ["Coating & Drying"],
+                    "3": ["Calendering"],
+                    "4": ["Winding/Stacking"],
+                    "5": ["Final Grading"],
                 },
             ),
+        )
+    )
+    
+    # Derive activity from subcategory
+    config_builder.add_column(
+        ExpressionColumnConfig(
+            name="activity",
+            expr="""{% if subcategory in ['Slurry Mixing', 'Coating & Drying', 'Calendering'] %}Electrode Manufacturing{% elif subcategory == 'Winding/Stacking' %}Cell Assembly{% else %}Formation & Aging{% endif %}""",
+        )
+    )
+    
+    # Factory Location (mapped from subcategory for correlation analysis)
+    # Special case: "Coating & Drying" -> "Coating_Room" for bad shift detection
+    config_builder.add_column(
+        ExpressionColumnConfig(
+            name="location",
+            expr="""{% if subcategory == 'Coating & Drying' %}Coating_Room{% elif subcategory in ['Slurry Mixing', 'Calendering'] %}Electrode_Wing{% elif subcategory in ['Winding/Stacking', 'Electrolyte Filling', 'Cap Welding'] %}Assembly_Floor{% else %}Formation_Lab{% endif %}""",
         )
     )
 
@@ -147,12 +184,23 @@ def main():
         )
     )
 
-    # 5. Add Environmental Measurements
+    # 5. Add Environmental Measurements with Correlation
+    # Generate base temperature, then add correlation in a separate step
     config_builder.add_column(
         SamplerColumnConfig(
-            name="ambient_temp_c",
+            name="base_temp_c",
             sampler_type=SamplerType.GAUSSIAN,
             params=GaussianSamplerParams(mean=21.5, stddev=1.2, decimal_places=2),
+            drop=True,  # Will be replaced by ambient_temp_c
+        )
+    )
+    
+    # Apply "Bad Shift" correlation: Friday_PM + Coating_Room = +5°C
+    config_builder.add_column(
+        ExpressionColumnConfig(
+            name="ambient_temp_c",
+            expr="""{% if shift == 'Friday_PM' and location == 'Coating_Room' %}{{ base_temp_c + 5.0 }}{% else %}{{ base_temp_c }}{% endif %}""",
+            dtype="float",
         )
     )
 
@@ -164,12 +212,14 @@ def main():
             name="operator_log",
             model_alias=MODEL_ALIAS,
             prompt="""Write a short, telegraphic operator log for batch {{ case_id }} at step {{ subcategory }}.
+            Shift: {{ shift }}, Location: {{ location }}, Ambient temp: {{ ambient_temp_c }}°C.
             
             The system recorded a value of {{ qc_data.value }} {{ qc_data.unit }} for {{ qc_data.metric_name }}.
             The status was flagged as: {{ qc_data.status }}.
             
             If the status is 'In Spec', simply note 'Process nominal'.
-            If 'Tolerance Warning' or 'Critical Fail', describe a potential root cause (e.g., 'pump pressure fluctuation', 'oven temp drift', 'debris on sensor').""",
+            If 'Tolerance Warning' or 'Critical Fail', describe a potential root cause.
+            If Friday_PM shift at Coating_Room with elevated temperature, mention HVAC issues.""",
         )
     )
 
@@ -204,16 +254,38 @@ def main():
     
     print("🚀 Generating preview (performing health checks)...")
     try:
-        preview = data_designer.preview(config_builder, num_records=5)
+        preview = data_designer.preview(config_builder, num_records=100)
         print("\n" + "="*80)
         preview.display_sample_record()
         print("="*80)
         
-        # Optional: Print a clean summary table to verify the "Context" logic worked
-        print("\n🔍 Contextual Verification (First 5 rows):")
+        # Verify correlation: Check temperature by shift + location
+        print("\n🔍 Correlation Analysis - Temperature by Shift & Location:")
         df = preview.dataset
-        # Display key columns to verify polymorphic metrics
-        print(df[['subcategory', 'qc_data']].to_string())
+        print(df[['shift', 'location', 'ambient_temp_c', 'subcategory']].head(10).to_string())
+        
+        # Calculate stats for bad shift
+        bad_shift = df[(df['shift'] == 'Friday_PM') & (df['location'] == 'Coating_Room')]
+        normal = df[~((df['shift'] == 'Friday_PM') & (df['location'] == 'Coating_Room'))]
+        
+        if len(bad_shift) > 0:
+            print(f"\n📊 Bad Shift (Friday_PM + Coating_Room): Mean Temp = {bad_shift['ambient_temp_c'].mean():.2f}°C (n={len(bad_shift)})")
+        if len(normal) > 0:
+            print(f"📊 Normal Conditions: Mean Temp = {normal['ambient_temp_c'].mean():.2f}°C (n={len(normal)})")
+        
+        # Verify batch traceability
+        print("\n🔗 Batch Traceability Analysis:")
+        print(df[['case_id', 'process_step', 'subcategory']].to_string())
+        
+        batch_counts = df['case_id'].value_counts()
+        print(f"\n📊 Unique batches: {len(batch_counts)}")
+        print(f"📊 Records per batch (avg): {batch_counts.mean():.1f}")
+        print(f"📊 Batch ID distribution:\n{batch_counts.head(10).to_string()}")
+        
+        # Save dataset for validation
+        output_file = "gigafactory_synthetic_data.csv"
+        df.to_csv(output_file, index=False)
+        print(f"\n💾 Dataset saved to {output_file}")
         
         print("\n✅ Success!")
     except Exception as e:
